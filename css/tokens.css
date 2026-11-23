@@ -1,0 +1,41 @@
+/* ТЕПЛО — токены дизайн-системы (см. DESIGN.md) */
+:root {
+  /* цвет */
+  --cream: #F3E6DF;
+  --cream-light: #FAF4F0;
+  --cream-deep: #EBDAD2;
+  --line: #E0CBC1;
+  --wine: #55222F;
+  --wine-hover: #6B2E3C;
+  --berry: #8F4752;
+  --flame: #E8843C;
+
+  /* шрифты (файлы woff2 локально в /fonts) */
+  --font-display: "Cormorant Garamond", "Cormorant", Georgia, serif;
+  --font-text: "Jost", "Montserrat", system-ui, sans-serif;
+
+  /* размеры текста */
+  --fs-display: clamp(42px, 6vw, 64px);
+  --fs-h2: clamp(32px, 4.2vw, 44px);
+  --fs-h3: clamp(24px, 2.6vw, 28px);
+  --fs-lead: 20px;
+  --fs-body: 17px;
+  --fs-small: 15px;
+  --fs-label: 13px;
+  --tracking-label: 0.18em;
+  --measure: 640px;
+
+  /* отступы, шаг 8 */
+  --s-1: 4px;  --s-2: 8px;  --s-3: 12px; --s-4: 16px; --s-5: 24px;
+  --s-6: 32px; --s-7: 48px; --s-8: 64px; --s-9: 96px; --s-10: 128px;
+  --section-y: clamp(72px, 9vw, 112px);
+  --content: 1120px;
+  --gutter: 24px;
+
+  /* форма */
+  --r-field: 12px;
+  --r-card: 24px;
+  --r-pill: 999px;
+  --r-arch: 999px 999px 24px 24px;
+  --shadow-soft: 0 16px 40px rgba(85, 34, 47, .08);
+}

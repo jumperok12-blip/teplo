@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ТЕПЛО — Ирина Никитина, телесный терапевт и послеродовая доула, Пенза</title>
+<meta name="description" content="Послеродовое пеленание, правка тела, исцеление истории родов, AromaTouch. Пенза, ул. Московская, 17, ТЦ «Орленок», 3 этаж. Запись по предварительной договорённости.">
+<!-- ЧЕРНОВИК: шрифты для просмотра. Перед запуском заменить на локальные файлы из /fonts (сайт должен открываться без VPN). -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ТЕПЛО — токены дизайн-системы (см. DESIGN.md) */
+:root {
+  color-scheme: light;
+  /* цвет */
+  --cream: #F3E6DF;
+  --cream-light: #FAF4F0;
+  --cream-deep: #EBDAD2;
+  --line: #E0CBC1;
+  --wine: #55222F;
+  --wine-hover: #6B2E3C;
+  --berry: #8F4752;
+  --flame: #E8843C;
+
+  /* шрифты (файлы woff2 локально в /fonts) */
+  --font-display: "Cormorant Garamond", "Cormorant", Georgia, serif;
+  --font-text: "Jost", "Montserrat", system-ui, sans-serif;
+
+  /* размеры текста */
+  --fs-display: clamp(42px, 6vw, 64px);
+  --fs-h2: clamp(32px, 4.2vw, 44px);
+  --fs-h3: clamp(24px, 2.6vw, 28px);
+  --fs-lead: 20px;
+  --fs-body: 17px;
+  --fs-small: 15px;
+  --fs-label: 13px;
+  --tracking-label: 0.18em;
+  --measure: 640px;
+
+  /* отступы, шаг 8 */
+  --s-1: 4px;  --s-2: 8px;  --s-3: 12px; --s-4: 16px; --s-5: 24px;
+  --s-6: 32px; --s-7: 48px; --s-8: 64px; --s-9: 96px; --s-10: 128px;
+  --section-y: clamp(72px, 9vw, 112px);
+  --content: 1120px;
+  --gutter: 24px;
+
+  /* форма */
+  --r-field: 12px;
+  --r-card: 24px;
+  --r-pill: 999px;
+  --r-arch: 999px 999px 24px 24px;
+  --shadow-soft: 0 16px 40px rgba(85, 34, 47, .08);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-variant-numeric:lining-nums;margin:0;background:var(--cream);color:var(--wine);font-family:var(--font-text);font-size:var(--fs-body);line-height:1.65;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--flame);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--content);margin:0 auto;padding:0 var(--gutter)}
+.label{font-size:var(--fs-label);font-weight:500;letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--berry);margin:0 0 var(--s-4)}
+h1,h2,h3{font-variant-numeric:lining-nums;font-family:var(--font-display);font-weight:500;margin:0;line-height:1.1;letter-spacing:-.005em}
+h1{font-size:var(--fs-display);line-height:1.05}
+h2{font-size:var(--fs-h2)}
+h3{font-size:var(--fs-h3);line-height:1.2}
+em{font-style:italic;font-weight:400}
+p{margin:0 0 var(--s-4);max-width:var(--measure)}
+.lead{font-size:var(--fs-lead);line-height:1.55}
+.small{font-size:var(--fs-small);line-height:1.5}
+section{padding:var(--section-y) 0}
+svg.icon{display:block;width:100%;height:auto}
+
+/* кнопки */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--s-2);min-height:52px;padding:0 var(--s-6);border-radius:var(--r-pill);font:500 16px/1 var(--font-text);text-decoration:none;border:1px solid transparent;transition:background .2s,color .2s,border-color .2s;cursor:pointer}
+.btn-primary{background:var(--wine);color:var(--cream)}
+.btn-primary:hover{background:var(--wine-hover)}
+.btn-secondary{border-color:var(--wine);color:var(--wine)}
+.btn-secondary:hover{background:var(--wine);color:var(--cream)}
+.on-wine .btn-primary{background:var(--cream);color:var(--wine)}
+.on-wine .btn-primary:hover{background:var(--cream-light)}
+.on-wine .btn-secondary{border-color:rgba(243,230,223,.55);color:var(--cream)}
+.on-wine .btn-secondary:hover{background:var(--cream);color:var(--wine)}
+.quiet{background:none;border:0;padding:0;color:var(--wine);font:500 var(--fs-small)/1.4 var(--font-text);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;cursor:pointer}
+.btns{display:flex;flex-wrap:wrap;gap:var(--s-3)}
+
+/* шапка */
+.top{position:sticky;top:0;z-index:10;background:rgba(243,230,223,.92);backdrop-filter:saturate(1.2) blur(6px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.top .brand{color:var(--wine);width:112px}
+.top .btn{min-height:42px;padding:0 var(--s-5);font-size:15px}
+
+/* первый экран */
+.hero{background:var(--wine);color:var(--cream);padding:var(--s-8) 0 0;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:var(--s-7);align-items:end}
+.hero .label{color:rgba(243,230,223,.7)}
+.hero h1{margin-bottom:var(--s-5)}
+.hero h1 em{display:block}
+.hero .lead{color:rgba(243,230,223,.88);margin-bottom:var(--s-6)}
+.hero-text{padding-bottom:var(--s-9)}
+.hero-photo{position:relative;align-self:end}
+.hero-photo img{border-radius:var(--r-arch) ;border-bottom-left-radius:0;border-bottom-right-radius:0;width:100%;aspect-ratio:6/7;object-fit:cover;object-position:50% 30%}
+.hero-photo img{position:relative;z-index:1}
+.hero-mark{position:absolute;z-index:0;color:var(--cream);opacity:.12;width:72%;right:-28%;top:-6%;pointer-events:none}
+.hero .meta{margin-top:var(--s-6)}
+
+.hero .wrap,.about .wrap{display:block}
+.ftab svg.tabmark{width:84px;height:auto}
+.f1 .label{color:var(--berry)}
+.f1-photo .sticker{white-space:nowrap}
+/* обо мне */
+.about .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:var(--s-8);align-items:start}
+.arch{border-radius:var(--r-arch);overflow:hidden}
+.arch img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.about h2{margin-bottom:var(--s-5)}
+details summary{list-style:none}
+details summary::-webkit-details-marker{display:none}
+details[open] .more-btn{display:none}
+.facts{list-style:none;padding:0;margin:var(--s-6) 0 0;display:grid;gap:var(--s-3)}
+.facts li,.gives li{position:relative;padding-left:22px}
+.facts li::before,.gives li::before{content:"";position:absolute;left:2px;top:.55em;width:8px;height:11px;background:var(--flame);border-radius:50% 50% 50% 50%/60% 60% 40% 40%;transform:rotate(180deg)}
+.todo{background:#fff3cd;color:#6b4e00;padding:2px 6px;border-radius:4px;font-size:14px}
+
+/* услуги */
+.services{background:var(--cream-deep)}
+.services .head{margin-bottom:var(--s-7)}
+.card{background:var(--cream-light);border-radius:var(--r-card);padding:var(--s-6)}
+.feature{display:grid;grid-template-columns:.85fr 1.15fr;gap:var(--s-7);padding:var(--s-5);align-items:stretch;margin-bottom:var(--s-5)}
+.feature .photo{border-radius:calc(var(--r-card) - 8px);overflow:hidden}
+.feature .photo img{width:100%;height:100%;object-fit:cover;min-height:420px}
+.feature .body{padding:var(--s-5) var(--s-5) var(--s-5) 0;display:flex;flex-direction:column}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s-5)}
+.cards .card{display:flex;flex-direction:column}
+.card h3{margin-bottom:var(--s-4)}
+.card .sub{font-weight:500;margin:var(--s-5) 0 var(--s-3)}
+.gives{list-style:none;padding:0;margin:0 0 var(--s-5);display:grid;gap:var(--s-2)}
+.price{margin-top:auto;padding-top:var(--s-5);border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline;gap:var(--s-4);font-size:var(--fs-small);color:var(--berry)}
+.price b{font:600 24px/1 var(--font-display);color:var(--wine);white-space:nowrap}
+.note{font-size:var(--fs-small);color:var(--berry);margin-top:var(--s-3)}
+
+/* отзывы */
+.reviews .head{display:flex;justify-content:space-between;align-items:end;gap:var(--s-5);margin-bottom:var(--s-7)}
+.rev-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s-5);align-items:start}
+.rev{margin:0;background:var(--cream-light);border-radius:var(--r-card);padding:var(--s-6);box-shadow:var(--shadow-soft)}
+.rev blockquote{margin:0;font:italic 400 21px/1.5 var(--font-display)}
+.rev blockquote p{max-width:none}
+.rev .clamp{display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
+.rev.open .clamp{display:block}
+.rev .who{margin-top:var(--s-4);display:flex;justify-content:space-between;align-items:center}
+.rev .who .label{margin:0}
+
+/* кабинет */
+.place .grid{display:grid;grid-template-columns:1.1fr .9fr .9fr;gap:var(--s-5);align-items:end;margin-top:var(--s-7)}
+.place figure{margin:0}
+.place figure img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:var(--r-card)}
+.place figure.tall img{border-radius:var(--r-arch);aspect-ratio:3/4.2}
+.place figcaption{font-size:var(--fs-small);color:var(--berry);margin-top:var(--s-3)}
+
+/* контакты / подвал */
+.contact{background:var(--wine);color:var(--cream)}
+.contact .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:var(--s-8)}
+.contact .label{color:rgba(243,230,223,.7)}
+.contact h2{margin-bottom:var(--s-5)}
+.contact p{color:rgba(243,230,223,.88)}
+.phone{display:inline-block;font:400 30px/1.2 var(--font-text);letter-spacing:.02em;text-decoration:none;margin:var(--s-2) 0 var(--s-6)}
+.addr{border-top:1px solid rgba(243,230,223,.2);padding-top:var(--s-5)}
+.foot{background:var(--wine);color:rgba(243,230,223,.6);border-top:1px solid rgba(243,230,223,.15);padding:var(--s-6) 0;font-size:14px}
+.foot .wrap{display:flex;justify-content:space-between;align-items:center;gap:var(--s-5);flex-wrap:wrap}
+.foot .brand{color:var(--cream);width:110px}
+
+@media (max-width:900px){
+  .hero .wrap,.about .wrap,.feature,.contact .wrap{grid-template-columns:1fr}
+  .hero{padding-top:var(--s-7)}
+  .hero-text{padding-bottom:0}
+  .hero-photo{max-width:440px;margin:0 auto;width:100%}
+  .about .wrap{gap:var(--s-7)}
+  .about .arch{max-width:420px}
+  .feature .photo img{min-height:0;aspect-ratio:4/3}
+  .feature .body{padding:0 var(--s-3) var(--s-3)}
+  .cards{grid-template-columns:1fr}
+  .rev-grid{grid-template-columns:1fr}
+  .place .grid{grid-template-columns:1fr 1fr}
+  .place figure.tall{grid-column:1/-1}
+  .place figure.tall img{aspect-ratio:4/3.4}
+  .reviews .head{display:block}
+  .contact .wrap{gap:var(--s-7)}
+}
+@media (max-width:520px){
+  .card{padding:var(--s-5)}
+  .btns .btn{flex:1 1 100%}
+  .top .brand{width:96px}
+  .place .grid{grid-template-columns:1fr}
+}
+
+/* ===== скрапбук-декор ===== */
+.deco{position:absolute;pointer-events:none;z-index:2;user-select:none}
+section,.hero{position:relative}
+/* рваный край бумаги */
+.torn{position:relative}
+.torn::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:26px;z-index:3;background:var(--torn-color,var(--cream));
+ -webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%2026'%20preserveAspectRatio='none'%3E%3Cpath%20d='M0%2026V12L0%2012L9%2014L22%206L30%2013L42%206L52%2010L60%2010L69%206L77%2014L88%206L97%206L109%2014L117%2013L129%206L138%207L151%2010L159%2010L171%2014L179%209L187%2010L201%209L211%2014L220%2010L228%2010L238%2010L252%207L261%206L273%2010L286%209L296%206L308%207L316%2010L324%2010L333%2014L346%2010L357%2013L367%2014L379%2014L389%2012L398%2013L400%2010V26z'%20fill='%23000'/%3E%3C/svg%3E") bottom/100% 100% no-repeat;
+         mask:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%2026'%20preserveAspectRatio='none'%3E%3Cpath%20d='M0%2026V12L0%2012L9%2014L22%206L30%2013L42%206L52%2010L60%2010L69%206L77%2014L88%206L97%206L109%2014L117%2013L129%206L138%207L151%2010L159%2010L171%2014L179%209L187%2010L201%209L211%2014L220%2010L228%2010L238%2010L252%207L261%206L273%2010L286%209L296%206L308%207L316%2010L324%2010L333%2014L346%2010L357%2013L367%2014L379%2014L389%2012L398%2013L400%2010V26z'%20fill='%23000'/%3E%3C/svg%3E") bottom/100% 100% no-repeat}
+.hero.torn{--torn-color:var(--cream)}
+.about.torn{--torn-color:var(--cream-deep)}
+.services.torn{--torn-color:var(--cream)}
+.place.torn{--torn-color:var(--wine)}
+/* стикер-плашка */
+.sticker{display:inline-block;background:var(--cream-light);color:var(--wine);border:1px solid var(--line);border-radius:var(--r-pill);padding:6px 14px;font:500 13px/1.2 var(--font-text);transform:rotate(-3deg);box-shadow:0 4px 10px rgba(85,34,47,.08)}
+.on-wine .sticker{background:var(--cream);border-color:transparent}
+/* бирка с ценой */
+.tagprice{position:relative;flex:none;display:inline-flex;align-items:center;gap:10px;background:var(--wine);color:var(--cream);height:40px;padding:0 18px 0 30px;
+ clip-path:polygon(16px 0,100% 0,100% 100%,16px 100%,0 50%);border-radius:0 8px 8px 0;transform:rotate(-2deg)}
+.tagprice::before{content:"";position:absolute;left:14px;top:50%;width:7px;height:7px;margin-top:-3.5px;border-radius:50%;background:var(--cream-light)}
+.price .tagprice b{color:var(--cream);font:500 18px/1 var(--font-text);font-variant-numeric:lining-nums tabular-nums;white-space:nowrap;letter-spacing:.01em}
+.feature .tagprice{height:46px;padding:0 22px 0 32px}
+.price .tagprice b{font-size:18px}.feature .price .tagprice b{font-size:21px}
+.price{align-items:center}
+/* отзывы-марки */
+.rev{position:relative;padding:var(--s-7) var(--s-6) var(--s-6);box-shadow:none;filter:drop-shadow(0 10px 18px rgba(85,34,47,.10));
+ --e:radial-gradient(circle at 50% 0,transparent 5px,var(--cream-light) 5.5px);
+ background:var(--cream-light);border-radius:0}
+.rev::before,.rev::after{content:"";position:absolute;left:0;right:0;height:10px;background:radial-gradient(circle at 9px 0,transparent 5px,var(--cream-light) 5.5px) 0 0/18px 10px repeat-x}
+.rev::before{top:-9px;transform:scaleY(-1)}
+.rev::after{bottom:-9px}
+.rev-wrap{position:relative}
+.rev-wrap .deco.pin{width:34px;top:-26px;left:46%;transform:rotate(4deg);z-index:4}
+.rev-wrap:nth-child(2) .deco.pin{transform:rotate(-8deg);left:30%}
+.rev-wrap:nth-child(3) .deco.clip{width:30px;top:-28px;left:24px;z-index:4;transform:rotate(-6deg)}
+.rev-wrap:nth-child(4) .deco.clip{width:30px;top:-28px;right:28px;left:auto;z-index:4;transform:rotate(7deg)}
+/* размещение декора */
+.hero .deco.herbs{width:240px;left:-40px;bottom:-30px;transform:rotate(-14deg);z-index:4}
+.about .deco.lavender{width:220px;right:-30px;top:40px;transform:rotate(12deg);opacity:.95}
+.feature{position:relative}
+.feature .deco.rebozo{width:360px;left:-30px;top:-38px;transform:rotate(-6deg);z-index:4}
+.services .deco.petals{width:170px;right:-20px;top:30px;transform:rotate(20deg)}
+.place .deco.linen{width:260px;right:6%;top:46px;transform:rotate(6deg)}
+.contact .deco.seal{width:110px;right:8%;top:-40px;transform:rotate(-10deg);z-index:4;filter:drop-shadow(0 8px 12px rgba(0,0,0,.25))}
+.contact .deco.petals2{width:150px;left:-30px;bottom:30px;transform:rotate(-30deg);opacity:.9}
+@media (max-width:900px){
+ .hero .deco.herbs{width:170px;left:-30px;bottom:-24px}
+ .about .deco.lavender{width:150px;right:-40px;top:-10px}
+ .feature .deco.rebozo{width:240px;left:-18px;top:-30px}
+ .services .deco.petals{width:120px;right:-30px;top:10px}
+ .place .deco.linen{width:170px;right:-10px;top:26px}
+ .contact .deco.seal{width:84px;right:16px;top:-34px}
+ .contact .deco.petals2{display:none}
+ 
+}
+body{overflow-x:clip}
+
+
+/* услуги-аккордеон */
+.svc-list{display:grid;gap:var(--s-3)}
+.svc{background:var(--cream-light);border-radius:var(--r-card);overflow:hidden;transition:box-shadow .2s}
+.svc[open]{box-shadow:var(--shadow-soft)}
+.svc summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:72px minmax(0,1fr) auto 28px;gap:var(--s-4);align-items:center;padding:var(--s-3) var(--s-5) var(--s-3) var(--s-3)}
+.svc summary::-webkit-details-marker{display:none}
+.svc-ph{width:72px;height:72px;border-radius:var(--r-arch);overflow:hidden;display:block}
+.svc-ph img{width:100%;height:100%;object-fit:cover}
+.svc-hd{display:flex;flex-direction:column;gap:2px}
+.svc-t{font:500 22px/1.15 var(--font-display)}
+.svc-l{font-size:var(--fs-small);color:var(--berry);line-height:1.4}
+.svc-m{font-size:13px;color:var(--berry);opacity:.8}
+.svc .tagprice{transform:rotate(-2deg)}
+.svc-x{width:28px;height:28px;border-radius:50%;border:1px solid var(--line);position:relative}
+.svc-x::before,.svc-x::after{content:"";position:absolute;left:50%;top:50%;width:11px;height:1.5px;background:var(--wine);transform:translate(-50%,-50%);transition:transform .25s}
+.svc-x::after{transform:translate(-50%,-50%) rotate(90deg)}
+.svc[open] .svc-x::after{transform:translate(-50%,-50%) rotate(0)}
+.svc-body{padding:0 var(--s-6) var(--s-6) calc(72px + var(--s-3) + var(--s-4))}
+.svc-body .btn{margin-top:var(--s-4)}
+.svc-main .svc-t{font-size:26px}
+@media (max-width:600px){
+ .svc summary{grid-template-columns:56px minmax(0,1fr) 24px;gap:var(--s-3);padding:var(--s-3)}
+ .svc-ph{width:56px;height:56px}
+ .svc-t{font-size:19px}.svc-main .svc-t{font-size:21px}
+ .svc-l{display:none}
+ .svc .tagprice{grid-column:2;justify-self:start;height:32px;padding:0 14px 0 24px;margin-top:2px}
+ .svc .tagprice b{font-size:15px!important}
+ .svc .svc-x{grid-column:3;grid-row:1}
+ .svc-body{padding:0 var(--s-4) var(--s-5)}
+}
+
+
+/* ===== папки ===== */
+.folder{position:relative;border-radius:0 28px 28px 28px;background:var(--cream-light)}
+.ftab{position:absolute;bottom:100%;left:0;height:38px;padding:0 26px 0 22px;display:flex;align-items:center;border-radius:16px 16px 0 0;background:inherit;
+ font:500 12px/1 var(--font-text);letter-spacing:.14em;text-transform:uppercase;color:var(--berry)}
+.f1 .ftab::after{content:"";position:absolute;right:-18px;bottom:0;width:18px;height:18px;background:radial-gradient(circle at 100% 0,transparent 17.5px,var(--cream-light) 18px)}
+.hero{padding:var(--s-8) 0 var(--s-9)}
+.stack{position:relative;padding-top:58px}
+.stack .folder.f3,.stack .folder.f2{position:absolute;inset:58px 0 0 0}
+.f3{background:var(--berry);--fold-bg:var(--berry);transform:translate(24px,-28px)}
+.f3 .ftab{left:auto;right:40px;color:var(--cream)}
+.f3 .ftab::after{display:none}
+.f2{background:var(--cream-deep);--fold-bg:var(--cream-deep);transform:translate(12px,-14px)}
+.f2 .ftab{left:46%}
+.f1{position:relative;color:var(--wine);box-shadow:0 30px 60px rgba(20,4,10,.35);padding:var(--s-6)}
+.f1 .ftab{color:var(--wine)}
+.tabmark{width:86px;color:var(--wine)}
+.f1-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:var(--s-7);align-items:center}
+.f1-text{padding:var(--s-5)}
+.f1 h1{color:var(--wine);margin-bottom:var(--s-5)}
+.f1 h1 em{display:inline}
+.f1 .lead{color:var(--wine);opacity:.85;margin-bottom:var(--s-6)}
+.f1 .btn-primary{background:var(--wine);color:var(--cream)}
+.f1 .btn-secondary{border-color:var(--wine);color:var(--wine)}
+.f1 .btn-secondary:hover{background:var(--wine);color:var(--cream)}
+.chips{list-style:none;padding:0;margin:var(--s-6) 0 0;display:flex;flex-wrap:wrap;gap:var(--s-2)}
+.chips li{font-size:13px;padding:6px 12px;border-radius:var(--r-pill);background:var(--cream);border:1px solid var(--line);color:var(--berry)}
+.f1-photo{margin:0;position:relative}
+.f1-photo img{width:100%;aspect-ratio:1/1.05;object-fit:cover;object-position:50% 25%;border-radius:20px}
+.f1-photo .sticker{position:absolute;left:-14px;bottom:22px}
+/* обо мне */
+.about{padding-top:var(--section-y)}
+.about h2{margin-bottom:var(--s-7)}
+.fold-tabs{display:flex;gap:4px;position:relative;z-index:1;overflow-x:auto;scrollbar-width:none}
+.fold-tabs::-webkit-scrollbar{display:none}
+.fold-tabs button{flex:none;font:500 15px/1 var(--font-text);color:var(--berry);background:var(--cream-deep);border:0;height:46px;padding:0 24px;border-radius:16px 16px 0 0;cursor:pointer;transition:background .2s,color .2s}
+.fold-tabs button[aria-selected=true]{background:var(--cream-light);color:var(--wine)}
+.fold-tabs button:hover{color:var(--wine)}
+.fa{padding:var(--s-7);box-shadow:var(--shadow-soft);min-height:300px}
+.fa-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:var(--s-7);align-items:center}
+.fa-photo img{width:100%;aspect-ratio:4/4.3;object-fit:cover;border-radius:20px}
+.fa-text{columns:2;column-gap:var(--s-7)}
+.fa-text p{max-width:none}
+.quote{font:italic 400 22px/1.4 var(--font-display);border-left:2px solid var(--flame);padding-left:var(--s-4);margin-top:var(--s-5)}
+@media (max-width:900px){
+ .hero{padding:var(--s-6) 0 var(--s-8)}
+ .f1{padding:var(--s-4)}
+ .f1-grid{grid-template-columns:1fr;gap:var(--s-4)}
+ .f1-photo{order:-1}
+ .f1-text{padding:var(--s-3) var(--s-2) var(--s-3)}
+ .f1-photo img{aspect-ratio:1/1}
+ .f2 .ftab{left:auto;right:24px}.f3 .ftab{display:none}
+ .f3{transform:translate(14px,-20px)}.f2{transform:translate(7px,-10px)}
+ .fa{padding:var(--s-5)}
+ .fa-grid{grid-template-columns:1fr;gap:var(--s-5)}
+ .fa-text{columns:1}
+ .fold-tabs button{padding:0 16px;font-size:14px;height:42px}
+}
+
+.about .wrap{display:block}
+.about .fa-grid{align-items:start}
+section.torn{padding-bottom:calc(var(--section-y)*.55)}
+section.torn + section{padding-top:calc(var(--section-y)*.75)}
+.torn::after{height:18px}
+@media (max-width:600px){:root{--section-y:56px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="mark" viewBox="250 208 833 884"><path fill-rule="evenodd" fill="currentColor" fill-opacity="1" d="M 621.570312 1085.777344 C 622.101562 1084.398438 622.738281 1080.898438 623.058594 1078.03125 L 623.695312 1072.726562 L 621.679688 1076.972656 C 620.40625 1079.625 619.554688 1080.472656 619.554688 1079.199219 C 619.554688 1076.335938 618.175781 1078.03125 616.796875 1082.59375 C 615.734375 1085.992188 615.734375 1085.246094 616.160156 1077.714844 C 616.585938 1071.136719 616.371094 1069.011719 615.3125 1069.011719 C 614.464844 1069.011719 614.25 1069.863281 614.675781 1071.558594 C 614.992188 1072.9375 614.78125 1075.699219 614.039062 1077.609375 C 612.976562 1080.578125 612.765625 1080.792969 612.128906 1078.988281 C 611.703125 1077.925781 610.75 1076.972656 609.902344 1076.972656 C 608.839844 1076.972656 608.308594 1075.378906 608.203125 1071.667969 C 607.882812 1065.511719 605.761719 1054.050781 604.703125 1052.566406 C 604.277344 1052.035156 603.320312 1049.597656 602.578125 1047.261719 C 600.988281 1042.273438 597.273438 1034.636719 596.742188 1035.273438 C 596.53125 1035.484375 597.273438 1038.457031 598.441406 1041.851562 C 600.667969 1048.855469 600.882812 1049.914062 599.609375 1049.914062 C 599.183594 1049.914062 598.230469 1048.324219 597.484375 1046.414062 C 592.921875 1033.574219 564.910156 1001.742188 556.53125 999.621094 C 554.832031 999.195312 552.285156 998.136719 550.800781 997.074219 C 543.902344 992.511719 518.226562 985.402344 506.554688 984.871094 C 504.855469 984.765625 503.160156 984.34375 502.839844 983.917969 C 502.523438 983.492188 499.65625 982.960938 496.472656 982.644531 C 492.125 982.113281 491.0625 982.21875 492.230469 983.175781 C 493.398438 984.023438 492.65625 984.128906 489.046875 983.597656 C 486.394531 983.175781 481.511719 982.960938 478.222656 982.960938 C 474.933594 983.070312 471.859375 982.644531 471.539062 982.007812 C 471.007812 981.160156 470.371094 981.160156 469.417969 982.007812 C 468.570312 982.75 467.296875 982.855469 466.554688 982.324219 C 464.324219 980.945312 447.773438 979.144531 446.710938 980.203125 C 445.542969 981.371094 435.464844 979.25 432.28125 977.125 C 431.113281 976.382812 425.171875 974.472656 419.019531 972.882812 C 412.863281 971.398438 406.921875 969.59375 405.753906 968.957031 C 404.585938 968.320312 403.101562 967.683594 402.359375 967.578125 C 400.34375 967.257812 382.625 959.511719 379.972656 957.816406 C 376.574219 955.585938 377.847656 954.949219 381.773438 956.964844 C 386.230469 959.300781 387.1875 959.089844 384.003906 956.4375 C 382.410156 955.058594 382.09375 954.421875 383.15625 954.84375 C 384.109375 955.058594 385.171875 954.84375 385.488281 954.101562 C 385.699219 953.359375 386.019531 953.675781 386.019531 954.632812 C 386.125 956.542969 388.777344 957.285156 389.734375 955.695312 C 390.582031 954.207031 388.988281 952.722656 383.683594 950.175781 C 380.925781 948.796875 377.847656 946.78125 376.894531 945.71875 C 375.9375 944.660156 374.667969 943.808594 374.136719 943.808594 C 373.5 943.808594 371.375 942.535156 369.253906 940.839844 C 367.132812 939.246094 363.84375 936.914062 361.933594 935.640625 C 357.796875 932.773438 356.414062 931.609375 351.746094 927.046875 C 349.730469 925.242188 347.714844 923.648438 347.078125 923.648438 C 346.546875 923.648438 345.804688 922.90625 345.382812 922.058594 C 345.0625 921.210938 344.214844 920.574219 343.472656 920.679688 C 342.726562 920.890625 342.199219 920.359375 342.410156 919.617188 C 342.515625 918.769531 341.773438 917.921875 340.605469 917.601562 C 339.546875 917.285156 338.378906 916.222656 338.058594 915.054688 C 337.742188 913.996094 337 913.039062 336.363281 913.039062 C 335.726562 913.039062 335.621094 913.78125 335.9375 914.84375 C 336.363281 916.011719 336.257812 916.328125 335.300781 915.796875 C 334.664062 915.375 334.238281 914.207031 334.347656 913.25 C 334.558594 912.296875 334.027344 911.554688 333.285156 911.765625 C 332.648438 911.871094 332.117188 911.339844 332.222656 910.703125 C 332.4375 909.960938 331.90625 909.433594 331.269531 909.644531 C 330.527344 909.75 329.890625 909.21875 329.890625 908.371094 C 329.890625 907.628906 329.148438 906.355469 328.296875 905.613281 C 326.917969 904.445312 326.707031 904.550781 327.34375 906.25 C 327.875 908.265625 327.875 908.265625 326.28125 906.25 C 324.796875 904.339844 324.796875 904.019531 327.023438 902.109375 C 328.722656 900.625 328.828125 900.199219 327.554688 900.625 C 326.175781 901.050781 324.902344 899.988281 322.78125 896.59375 C 321.1875 894.046875 319.492188 891.925781 319.171875 891.820312 C 318.324219 891.820312 321.613281 898.398438 323.628906 901.15625 C 324.476562 902.109375 323.734375 901.792969 322.039062 900.308594 C 314.714844 893.726562 292.753906 858.078125 292.753906 852.664062 C 292.753906 851.5 292.328125 850.4375 291.691406 850.4375 C 291.054688 850.4375 290.632812 849.695312 290.632812 848.738281 C 290.632812 847.890625 290.207031 847.359375 289.675781 847.785156 C 287.554688 849.058594 294.449219 864.019531 305.699219 883.011719 C 313.335938 895.746094 319.808594 904.019531 331.800781 916.117188 C 336.679688 921.101562 339.757812 924.390625 338.589844 923.542969 C 332.222656 918.980469 328.085938 915.480469 325.964844 913.039062 C 324.796875 911.554688 323.417969 910.703125 322.992188 911.128906 C 322.570312 911.554688 326.917969 916.433594 332.648438 922.058594 C 338.484375 927.574219 342.410156 932.136719 341.5625 932.136719 C 339.757812 932.136719 336.257812 929.167969 325.222656 918.558594 C 316.203125 909.75 317.6875 912.933594 328.722656 925.878906 C 334.558594 932.667969 330.949219 930.546875 322.886719 922.269531 C 315.140625 914.523438 301.242188 896.910156 301.242188 895 C 301.242188 894.472656 300.816406 893.941406 300.179688 893.941406 C 299.542969 893.941406 299.121094 893.410156 299.121094 892.773438 C 299.121094 892.242188 297.953125 889.910156 296.464844 887.785156 C 294.980469 885.664062 293.8125 883.222656 293.8125 882.375 C 293.8125 881.527344 293.175781 880.039062 292.328125 879.191406 C 289.039062 875.371094 276.519531 848.738281 277.367188 847.253906 C 277.6875 846.828125 277.472656 846.191406 276.945312 845.980469 C 276.199219 845.664062 267.289062 820.515625 267.289062 818.5 C 267.289062 817.96875 267.710938 817.546875 268.242188 817.546875 C 269.089844 817.546875 270.046875 819.5625 271 823.59375 C 271.636719 826.035156 277.050781 839.296875 277.898438 840.359375 C 278.324219 840.886719 280.550781 844.921875 282.671875 849.164062 C 284.796875 853.410156 286.8125 856.699219 287.023438 856.484375 C 287.554688 856.0625 287.128906 854.894531 282.25 843.964844 C 278.214844 834.523438 268.453125 807.464844 266.226562 798.976562 C 264.953125 794.308594 263.574219 789.320312 262.9375 787.835938 C 262.40625 786.351562 261.769531 783.699219 261.558594 782 C 260.601562 774.679688 259.648438 769.160156 259.011719 767.675781 C 258.695312 766.828125 258.269531 765.128906 258.164062 763.960938 C 257.949219 762.792969 257.3125 758.976562 256.675781 755.472656 C 256.148438 751.972656 255.402344 744.863281 255.085938 739.558594 L 254.660156 730.007812 L 256.570312 736.375 C 257.738281 739.875 259.328125 745.179688 260.179688 748.046875 L 261.769531 753.351562 L 261.238281 748.046875 C 260.921875 745.179688 259.753906 737.648438 258.585938 731.386719 C 257.527344 725.128906 256.675781 719.398438 256.785156 718.65625 C 257.207031 715.472656 256.570312 714.09375 255.617188 716.214844 C 254.765625 718.230469 254.660156 718.230469 254.660156 716.320312 C 254.554688 715.261719 255.296875 713.773438 256.148438 713.136719 C 257.3125 712.289062 257.527344 711.226562 256.785156 708.789062 L 255.828125 705.605469 L 255.722656 709.105469 C 255.617188 710.910156 255.191406 712.5 254.660156 712.5 C 253.496094 712.5 253.496094 708.789062 254.765625 697.644531 C 256.464844 683.851562 256.675781 682.472656 257.421875 680.140625 C 258.058594 678.335938 258.269531 678.441406 258.800781 681.199219 C 259.4375 683.851562 259.648438 683.429688 260.285156 678.015625 C 261.132812 670.378906 262.832031 663.691406 263.890625 663.691406 C 264.316406 663.691406 264.742188 668.785156 264.847656 674.941406 C 264.953125 681.941406 265.695312 688.203125 266.863281 691.597656 C 268.878906 697.859375 274.820312 709.316406 275.988281 709.316406 C 277.261719 709.316406 277.050781 707.9375 275.351562 705.5 C 273.441406 702.84375 269.199219 691.066406 269.941406 690.429688 C 270.152344 690.21875 271.214844 691.8125 272.273438 694.039062 C 274.609375 699.238281 288.296875 717.804688 289.78125 717.804688 C 290.417969 717.804688 294.132812 720.246094 298.164062 723.113281 C 302.195312 726.082031 305.484375 728.203125 305.484375 727.992188 C 305.484375 727.675781 308.667969 728.949219 312.488281 730.644531 C 320.445312 734.253906 332.4375 737.648438 342.835938 739.238281 C 347.820312 740.089844 349.730469 740.726562 349.308594 741.679688 C 349.09375 742.421875 349.730469 743.378906 350.792969 743.695312 C 354.1875 744.757812 381.246094 749.636719 383.898438 749.636719 C 386.445312 749.636719 386.445312 749.636719 384.425781 748.046875 C 382.410156 746.5625 382.410156 746.5625 384.535156 746.453125 C 387.082031 746.453125 399.175781 748.894531 404.269531 750.488281 C 406.285156 751.125 411.910156 752.398438 416.894531 753.351562 C 428.355469 755.472656 454.773438 764.386719 467.613281 770.433594 C 476.632812 774.679688 480.242188 777.117188 475.253906 775.847656 C 474.085938 775.527344 473.132812 775.738281 473.132812 776.269531 C 473.132812 777.226562 475.570312 778.816406 482.042969 781.789062 L 486.289062 783.699219 L 484.273438 781.46875 C 477.480469 773.9375 505.492188 790.488281 523.53125 804.707031 C 543.054688 820.089844 573.71875 855.105469 572.234375 860.410156 C 571.808594 862.003906 571.914062 862.214844 572.65625 861.261719 C 573.824219 859.5625 575.097656 861.152344 582.84375 873.992188 C 597.378906 898.183594 612.445312 935.320312 615.84375 955.480469 C 616.160156 957.496094 616.902344 960.679688 617.433594 962.378906 C 619.238281 967.894531 622.527344 990.496094 623.90625 1005.351562 C 624.542969 1013.203125 625.390625 1019.992188 625.816406 1020.417969 C 626.242188 1020.84375 627.40625 1017.023438 628.46875 1011.929688 C 631.015625 999.726562 640.457031 966.621094 642.367188 962.800781 C 643.21875 961.210938 643.960938 959.089844 643.960938 958.238281 C 643.960938 956.4375 654.039062 932.667969 656.269531 929.273438 C 657.117188 928 657.753906 926.515625 657.753906 925.984375 C 657.753906 924.710938 674.414062 895 676.320312 892.878906 C 677.171875 891.925781 677.914062 890.757812 677.914062 890.332031 C 677.914062 889.484375 685.976562 878.449219 688.84375 875.371094 C 689.902344 874.203125 691.175781 872.402344 691.601562 871.445312 C 692.769531 868.15625 716.429688 843.964844 720.144531 842.265625 C 722.160156 841.3125 723.21875 840.25 722.582031 839.828125 C 721.839844 839.402344 722.371094 838.234375 724.070312 836.644531 C 725.554688 835.265625 727.039062 834.523438 727.359375 834.839844 C 727.78125 835.265625 732.027344 831.976562 736.800781 827.625 C 741.683594 823.273438 746.140625 819.667969 746.777344 819.667969 C 747.414062 819.667969 750.703125 817.015625 753.992188 813.726562 C 757.386719 810.4375 762.054688 806.828125 764.390625 805.660156 C 766.722656 804.601562 770.332031 802.371094 772.347656 800.675781 C 776.378906 797.277344 793.566406 787.625 797.8125 786.242188 C 799.296875 785.820312 802.164062 784.335938 804.179688 782.953125 C 808.636719 780.089844 827.839844 771.8125 831.128906 771.390625 C 832.296875 771.285156 836.011719 769.902344 839.191406 768.417969 C 844.390625 765.976562 862.429688 759.929688 865.1875 759.613281 C 865.71875 759.613281 867.949219 758.867188 869.964844 757.914062 C 871.980469 757.066406 875.164062 756.003906 876.859375 755.578125 L 880.042969 754.941406 L 877.601562 756.960938 C 876.328125 758.125 875.269531 759.292969 875.269531 759.503906 C 875.269531 760.566406 887.472656 755.792969 889.59375 753.882812 C 890.761719 752.820312 894.472656 751.230469 897.761719 750.273438 C 901.160156 749.320312 904.554688 748.257812 905.507812 747.941406 C 909.539062 746.347656 906.570312 749.636719 902.007812 751.652344 L 897.019531 753.882812 L 901.476562 753.351562 C 903.917969 753.03125 907.207031 752.289062 908.902344 751.546875 C 910.496094 750.910156 912.40625 750.273438 912.9375 750.167969 C 913.464844 749.957031 916.121094 748.894531 918.773438 747.621094 C 926.835938 743.90625 952.726562 738.285156 952.726562 740.40625 C 952.726562 740.726562 949.117188 741.679688 944.765625 742.742188 C 934.261719 745.074219 933.625 746.5625 944.023438 744.652344 C 948.480469 743.90625 965.246094 741.574219 981.269531 739.558594 C 997.183594 737.542969 1010.765625 735.527344 1011.296875 735.207031 C 1013.097656 734.039062 1033.789062 734.78125 1034.53125 736.054688 C 1034.957031 736.800781 1036.972656 736.90625 1040.261719 736.480469 C 1045.566406 735.632812 1053.84375 736.585938 1052.996094 737.859375 C 1052.78125 738.390625 1048.855469 739.027344 1044.292969 739.34375 C 1035.382812 739.980469 1027.53125 742 1033.894531 742 C 1035.59375 742 1037.609375 742.105469 1038.140625 742.210938 C 1038.671875 742.421875 1040.050781 742.210938 1041.109375 741.679688 C 1042.277344 741.148438 1043.65625 741.46875 1044.929688 742.636719 C 1045.992188 743.589844 1048.644531 744.332031 1051.191406 744.332031 C 1053.523438 744.332031 1057.769531 744.757812 1060.632812 745.394531 C 1063.394531 745.925781 1068.0625 746.667969 1070.820312 747.089844 C 1078.882812 748.046875 1076.230469 748.578125 1061.375 749.214844 C 1053.84375 749.425781 1044.824219 750.167969 1041.324219 750.804688 C 1037.820312 751.441406 1034.214844 752.078125 1033.363281 752.183594 C 1029.863281 752.714844 1018.617188 758.445312 1019.148438 759.398438 C 1019.570312 760.035156 1018.933594 760.140625 1017.449219 759.71875 C 1015.859375 759.1875 1015.328125 759.292969 1015.75 760.140625 C 1016.28125 760.886719 1015.328125 761.628906 1013.207031 761.945312 C 1011.402344 762.371094 1010.234375 763.007812 1010.765625 763.539062 C 1011.296875 764.066406 1014.691406 763.429688 1018.511719 762.265625 C 1022.222656 761.097656 1027 760.035156 1029.121094 759.824219 C 1031.136719 759.613281 1033.683594 759.082031 1034.636719 758.65625 C 1035.699219 758.230469 1036.546875 758.339844 1036.546875 758.867188 C 1036.546875 760.25 1030.074219 763.429688 1026.363281 763.960938 C 1018.722656 764.917969 987.738281 780.726562 987.738281 783.699219 C 987.738281 784.972656 988.484375 784.863281 991.242188 783.484375 C 993.363281 782.425781 987.632812 788.152344 981.902344 792.929688 C 978.296875 796.003906 970.445312 805.875 971.1875 806.617188 C 971.507812 807.039062 972.886719 806.296875 974.265625 805.128906 C 975.539062 803.964844 977.339844 803.222656 978.191406 803.433594 C 979.570312 803.859375 979.570312 803.75 978.296875 802.902344 C 977.023438 801.949219 977.023438 801.523438 978.507812 800.039062 C 979.464844 799.082031 980.84375 798.660156 981.480469 798.976562 C 982.117188 799.402344 982.539062 799.082031 982.328125 798.339844 C 982.011719 795.582031 982.433594 794.414062 983.921875 793.882812 C 985.085938 793.460938 985.300781 793.777344 984.980469 795.050781 C 984.558594 796.324219 984.980469 796.113281 986.148438 794.519531 C 989.332031 790.382812 991.347656 788.472656 997.820312 783.589844 C 1008.21875 775.738281 1008.644531 775.632812 1002.59375 782.105469 C 999.410156 785.5 996.226562 788.683594 995.484375 789.214844 C 990.921875 792.1875 981.054688 807.785156 968.851562 831.339844 C 964.503906 839.828125 960.046875 848.421875 958.984375 850.4375 C 957.820312 852.453125 956.96875 854.46875 956.96875 854.894531 C 956.96875 855.316406 955.800781 857.441406 954.316406 859.5625 C 951.664062 863.488281 950.710938 867.097656 952.726562 865.824219 C 953.363281 865.503906 954.636719 863.382812 955.800781 861.261719 C 963.015625 846.722656 970.65625 833.992188 971.507812 834.945312 C 971.824219 835.265625 971.292969 837.28125 970.234375 839.507812 C 958.878906 863.699219 954.527344 872.1875 951.664062 875.796875 C 949.753906 878.128906 948.585938 880.464844 948.90625 881.101562 C 949.328125 881.632812 949.117188 882.375 948.480469 882.800781 C 947.949219 883.117188 947.421875 884.179688 947.421875 885.027344 C 947.421875 885.875 945.828125 889.164062 944.023438 892.453125 C 942.113281 895.636719 939.355469 900.414062 937.871094 902.960938 C 929.808594 917.175781 921.425781 928.847656 919.195312 928.953125 C 918.664062 928.953125 915.589844 931.609375 912.511719 934.789062 C 909.222656 938.398438 906.464844 940.414062 905.722656 939.988281 C 904.976562 939.566406 904.765625 939.566406 905.191406 940.097656 C 906.039062 940.945312 902.21875 944.871094 900.523438 944.871094 C 899.992188 944.871094 898.082031 946.25 896.171875 947.949219 C 889.699219 953.890625 887.472656 955.695312 879.9375 961.421875 C 875.800781 964.605469 871.660156 967.894531 870.917969 968.957031 C 869.539062 970.652344 876.328125 966.089844 885.453125 959.300781 C 892.671875 953.890625 894.472656 952.828125 895.640625 953.148438 C 896.171875 953.253906 896.382812 952.933594 896.066406 952.402344 C 895.640625 951.875 895.851562 951.132812 896.382812 950.8125 C 896.914062 950.386719 897.761719 950.601562 898.082031 951.238281 C 898.929688 952.617188 896.597656 955.695312 895.324219 954.84375 C 894.792969 954.527344 894.367188 954.84375 894.367188 955.480469 C 894.367188 957.601562 881.210938 969.273438 879.511719 968.746094 C 878.558594 968.425781 876.117188 970.125 873.570312 972.777344 C 868.585938 978.082031 853.199219 988.585938 851.714844 987.738281 C 850.441406 986.996094 844.5 989.328125 844.5 990.601562 C 844.5 991.132812 843.753906 991.558594 842.90625 991.558594 C 842.058594 991.558594 841.316406 992.085938 841.316406 992.617188 C 841.316406 993.574219 835.796875 996.4375 824.339844 1001.425781 C 820.304688 1003.121094 803.4375 1008.535156 802.269531 1008.535156 C 800.996094 1008.425781 808.953125 1004.394531 810.542969 1004.289062 C 811.394531 1004.289062 814.578125 1003.015625 817.441406 1001.636719 C 824.339844 998.347656 820.625 998.242188 813.410156 1001.53125 C 810.332031 1002.910156 802.164062 1005.5625 795.160156 1007.472656 C 788.15625 1009.382812 781.472656 1011.292969 780.304688 1011.71875 C 777.226562 1012.988281 757.386719 1015.21875 754.839844 1014.6875 C 752.292969 1014.15625 758.234375 1012.351562 766.300781 1011.1875 C 769.058594 1010.867188 771.074219 1010.125 770.753906 1009.59375 C 770.4375 1009.0625 768.527344 1009.171875 766.511719 1009.699219 C 764.390625 1010.335938 761.84375 1010.445312 760.78125 1010.125 C 759.613281 1009.808594 753.355469 1010.019531 746.667969 1010.65625 C 727.78125 1012.460938 714.414062 1013.839844 711.867188 1014.476562 C 699.558594 1017.339844 693.9375 1019.675781 702.316406 1018.507812 C 705.078125 1018.082031 706.773438 1018.1875 706.242188 1018.71875 C 705.714844 1019.25 704.96875 1019.675781 704.652344 1019.78125 C 693.9375 1020.734375 680.140625 1026.359375 666.773438 1035.273438 C 662.742188 1038.03125 659.132812 1039.730469 658.816406 1039.199219 C 658.390625 1038.667969 656.691406 1040.363281 654.78125 1043.019531 C 652.980469 1045.671875 650.855469 1047.792969 650.21875 1047.792969 C 649.371094 1047.792969 649.371094 1047.367188 650.328125 1046.199219 C 651.175781 1045.246094 651.175781 1044.609375 650.539062 1044.609375 C 647.355469 1044.609375 628.574219 1068.90625 627.515625 1074.425781 C 627.300781 1075.59375 626.664062 1077.183594 626.132812 1077.925781 C 625.605469 1078.5625 624.542969 1080.898438 623.90625 1083.019531 C 623.164062 1085.246094 622.101562 1087.261719 621.570312 1087.582031 C 621.042969 1088.007812 621.042969 1087.261719 621.570312 1085.777344 Z M 636.320312 1047.050781 C 638.761719 1041.53125 649.054688 1026.253906 655.101562 1019.144531 C 669.214844 1002.484375 691.175781 979.671875 698.285156 974.15625 C 699.878906 972.882812 705.820312 967.894531 711.550781 962.910156 C 729.164062 947.523438 752.929688 930.015625 766.191406 922.589844 C 767.785156 921.738281 775.636719 917.285156 783.699219 912.722656 C 791.765625 908.160156 799.085938 904.019531 799.933594 903.597656 C 802.054688 902.429688 814.046875 895.957031 821.15625 892.136719 C 835.691406 884.179688 850.015625 875.054688 862.113281 865.929688 C 876.859375 854.789062 884.074219 848.210938 874.207031 854.683594 C 865.402344 860.515625 861.898438 862.535156 851.394531 867.945312 C 845.027344 871.234375 829.429688 877.917969 816.910156 882.90625 C 804.390625 887.890625 792.613281 892.5625 790.914062 893.410156 C 789.21875 894.152344 784.65625 896.167969 780.835938 897.761719 C 777.015625 899.457031 773.726562 901.15625 773.40625 901.472656 C 773.089844 901.792969 771.179688 902.640625 769.164062 903.488281 C 767.148438 904.339844 762.375 906.886719 758.554688 909.113281 C 748.050781 915.585938 742.636719 918.558594 742.636719 918.027344 C 742.636719 915.902344 760.675781 900.199219 780.625 885.027344 C 786.566406 880.359375 791.234375 876.433594 791.023438 876.222656 C 790.597656 875.796875 766.085938 890.863281 755.050781 898.289062 C 751.65625 900.519531 748.472656 902.429688 748.050781 902.429688 C 747.519531 902.429688 746.882812 902.746094 746.667969 903.277344 C 746.246094 904.125 735 912.722656 730.4375 915.585938 C 721.949219 920.890625 697.011719 944.550781 685.660156 958.132812 C 678.125 967.152344 665.179688 984.976562 665.179688 986.25 C 665.179688 986.886719 663.164062 990.390625 660.726562 993.890625 C 655.84375 1001.210938 637.277344 1037.289062 638.125 1038.03125 C 638.441406 1038.347656 638.230469 1039.09375 637.699219 1039.730469 C 636.746094 1040.894531 631.226562 1054.050781 631.226562 1055.113281 C 631.226562 1056.28125 634.515625 1050.976562 636.320312 1047.050781 Z M 622.84375 1016.386719 C 621.679688 1010.65625 620.191406 1005.773438 619.554688 1005.5625 C 619.027344 1005.351562 618.8125 1004.714844 619.132812 1004.183594 C 619.449219 1003.546875 619.34375 1002.59375 618.707031 1001.847656 C 618.175781 1001.105469 617.117188 998.136719 616.371094 995.269531 C 615.628906 992.40625 613.828125 987.101562 612.445312 983.597656 C 610.960938 980.097656 609.265625 975.851562 608.628906 974.050781 C 605.550781 966.304688 596.425781 949.75 588.996094 938.714844 C 578.175781 922.375 554.621094 898.925781 540.402344 890.121094 C 522.683594 879.296875 516.105469 875.691406 514.085938 875.476562 C 512.816406 875.265625 510.269531 874.417969 508.570312 873.460938 C 503.054688 870.492188 487.5625 864.550781 484.804688 864.441406 C 483.316406 864.335938 479.074219 863.0625 475.359375 861.578125 C 471.539062 860.09375 467.402344 858.925781 465.917969 858.925781 C 464.535156 858.925781 459.335938 857.757812 454.246094 856.378906 C 449.152344 855 439.496094 852.558594 432.8125 850.96875 C 408.621094 845.238281 382.835938 835.582031 368.832031 826.988281 C 358.644531 820.726562 362.78125 824.867188 374.667969 832.71875 C 399.8125 849.375 417.746094 857.757812 455.304688 870.492188 C 493.183594 883.222656 524.273438 897.230469 537.21875 907.203125 C 541.570312 910.492188 537.75 909.960938 531.808594 906.355469 C 523.847656 901.472656 508.890625 893.941406 508.359375 894.472656 C 508.144531 894.683594 509.738281 895.851562 512.070312 897.015625 C 536.476562 910.28125 556.210938 925.984375 575.417969 947.523438 C 577.433594 949.859375 579.234375 951.449219 579.234375 951.023438 C 579.234375 949.964844 570.855469 939.671875 561.304688 929.0625 C 551.542969 918.238281 554.515625 919.40625 567.035156 931.289062 C 581.890625 945.296875 603.003906 973.625 610.007812 988.90625 C 611.917969 993.042969 614.675781 998.984375 616.054688 1002.167969 C 617.539062 1005.351562 618.917969 1008.746094 619.027344 1009.59375 C 619.132812 1010.445312 619.875 1014.050781 620.617188 1017.550781 C 621.996094 1023.917969 622.421875 1026.359375 622.738281 1030.285156 C 622.84375 1032.089844 623.058594 1031.984375 623.90625 1029.648438 C 624.648438 1027.632812 624.332031 1023.917969 622.84375 1016.386719 Z M 749.746094 1006.835938 C 759.828125 1005.246094 763.222656 1004.289062 758.871094 1004.289062 C 755.792969 1004.289062 734.785156 1007.472656 734.253906 1008.109375 C 733.300781 1008.957031 739.667969 1008.535156 749.746094 1006.835938 Z M 466.765625 970.546875 C 462.945312 969.804688 455.410156 968 449.894531 966.515625 C 441.085938 964.183594 437.691406 963.863281 439.390625 965.5625 C 440.238281 966.410156 455.941406 970.441406 464.113281 971.820312 C 473.660156 973.519531 475.890625 972.457031 466.765625 970.546875 Z M 438.117188 964.074219 C 438.117188 963.652344 435.886719 962.589844 433.023438 961.847656 C 430.265625 961.105469 427.613281 960.148438 426.976562 959.726562 C 426.339844 959.300781 422.835938 957.921875 419.019531 956.648438 C 415.199219 955.269531 407.027344 951.554688 400.660156 948.476562 C 388.355469 942.21875 387.292969 941.898438 389.414062 944.445312 C 391.429688 946.886719 413.605469 957.179688 425.914062 961.421875 C 437.480469 965.347656 438.117188 965.457031 438.117188 964.074219 Z M 371.269531 947.3125 C 368.617188 945.824219 364.796875 943.171875 362.675781 941.476562 C 360.554688 939.882812 358.433594 938.503906 358.007812 938.503906 C 356.839844 938.503906 348.988281 932.773438 348.988281 931.820312 C 348.988281 930.757812 354.613281 933.835938 359.8125 937.761719 C 362.039062 939.460938 363.84375 940.519531 363.84375 940.203125 C 363.84375 939.882812 365.859375 941.15625 368.40625 943.066406 C 370.847656 944.871094 374.136719 947.3125 375.515625 948.265625 C 379.757812 951.132812 376.574219 950.386719 371.269531 947.3125 Z M 622.84375 928.742188 C 611.066406 904.65625 603.320312 883.542969 600.457031 867.625 C 599.925781 864.335938 598.972656 859.457031 598.335938 856.804688 C 596.425781 848.101562 596.105469 829.003906 597.699219 816.800781 C 600.03125 799.71875 608.945312 774.679688 615.207031 767.992188 C 616.480469 766.722656 617.433594 765.234375 617.433594 764.703125 C 617.433594 762.6875 627.195312 750.59375 635.683594 742.210938 C 643.113281 734.675781 659.875 721.519531 667.515625 717.277344 C 669.425781 716.214844 676.109375 711.652344 688.949219 702.527344 C 692.980469 699.769531 695.953125 698.175781 695.632812 699.132812 C 694.890625 701.148438 696.058594 701.359375 697.753906 699.664062 C 698.390625 699.027344 698.710938 697.753906 698.390625 697.011719 C 698.074219 696.160156 698.390625 695.523438 699.132812 695.523438 C 699.769531 695.523438 699.984375 696.054688 699.558594 696.796875 C 699.132812 697.539062 699.242188 697.644531 699.984375 697.222656 C 700.726562 696.796875 701.257812 695.84375 701.257812 695.207031 C 701.363281 693.71875 710.488281 686.398438 711.867188 686.71875 C 713.566406 687.25 721.3125 677.273438 727.359375 666.875 C 731.074219 660.507812 732.980469 657.964844 732.558594 659.980469 L 731.921875 663.164062 L 733.617188 660.085938 C 734.574219 658.492188 735.527344 655.628906 735.742188 653.71875 C 735.953125 651.914062 736.800781 647.671875 737.757812 644.277344 C 738.710938 640.878906 739.453125 635.789062 739.453125 632.921875 C 739.453125 629.953125 739.773438 627.617188 740.304688 627.617188 C 740.941406 627.617188 745.609375 642.578125 746.5625 647.777344 C 746.667969 648.625 747.304688 652.019531 747.941406 655.203125 C 749.324219 663.054688 749.109375 676 747.414062 687.25 C 745.820312 697.539062 740.199219 715.152344 737.542969 718.019531 C 736.695312 719.078125 736.269531 719.929688 736.695312 719.929688 C 737.757812 719.929688 731.390625 732.023438 729.480469 733.617188 C 728.527344 734.464844 727.78125 735.738281 727.78125 736.480469 C 727.78125 737.328125 725.980469 740.511719 723.855469 743.484375 C 713.035156 758.761719 701.894531 771.070312 670.488281 802.796875 C 653.828125 819.5625 653.296875 820.199219 649.160156 827.414062 C 647.355469 830.488281 645.339844 833.460938 644.597656 833.992188 C 640.671875 837.175781 631.226562 860.730469 627.515625 876.964844 C 624.011719 891.710938 624.96875 917.921875 629.53125 937.445312 C 630.378906 941.15625 631.015625 944.339844 630.910156 944.445312 C 630.804688 944.550781 627.195312 937.445312 622.84375 928.742188 Z M 604.171875 867.625 C 603.746094 866.671875 602.792969 859.5625 602.046875 852.027344 C 601.304688 844.496094 600.5625 839.402344 600.457031 840.886719 C 600.140625 843.753906 600.457031 856.273438 600.988281 858.925781 C 601.09375 859.773438 601.625 862.535156 602.046875 865.078125 C 602.472656 867.519531 603.214844 869.535156 603.851562 869.535156 C 604.488281 869.535156 604.59375 868.6875 604.171875 867.625 Z M 574.992188 804.386719 C 574.035156 800.992188 573.824219 794.945312 574.25 783.910156 C 574.886719 767.464844 575.628906 762.6875 579.34375 750.488281 C 581.675781 742.527344 581.359375 739.769531 578.8125 745.5 L 577.21875 749.105469 L 577.75 743.800781 C 578.28125 739.34375 579.765625 734.78125 582.101562 730.328125 C 582.3125 729.796875 582.101562 729.476562 581.570312 729.476562 C 580.296875 729.476562 578.492188 733.933594 577.21875 740.089844 C 575.839844 746.773438 571.914062 761.523438 571.277344 762.160156 C 569.6875 763.855469 572.976562 744.226562 575.945312 735.207031 C 577.964844 728.628906 585.816406 711.863281 589.847656 705.285156 C 595.152344 696.585938 601.625 688.839844 613.082031 677.488281 C 624.4375 666.238281 631.652344 660.402344 649.902344 647.988281 C 668.683594 635.152344 675.367188 625.28125 677.382812 607.351562 C 678.019531 602.152344 677.703125 600.667969 674.941406 595.042969 C 671.441406 588.253906 666.773438 581.992188 665.074219 581.992188 C 664.4375 581.992188 664.332031 582.417969 664.652344 583.054688 C 665.710938 584.75 663.90625 584.328125 661.785156 582.308594 C 660.726562 581.355469 659.875 581.039062 659.875 581.671875 C 659.875 582.203125 660.832031 583.582031 661.996094 584.644531 C 663.695312 586.128906 663.800781 586.765625 662.847656 587.507812 C 661.785156 588.144531 661.785156 588.570312 663.058594 589.527344 C 663.90625 590.164062 664.121094 590.480469 663.378906 590.269531 C 661.996094 589.949219 650.539062 579.765625 640.351562 570.003906 C 635.257812 565.015625 634.621094 564.058594 636.957031 565.015625 C 638.65625 565.652344 640.246094 565.863281 640.566406 565.546875 C 641.414062 564.804688 631.226562 560.453125 626.453125 559.605469 C 621.464844 558.753906 601.09375 552.707031 586.664062 547.933594 C 568.308594 541.671875 548.464844 531.484375 536.15625 522.042969 C 532.867188 519.390625 529.261719 517.054688 528.199219 516.738281 C 527.246094 516.417969 523.425781 512.175781 519.921875 507.402344 C 516.316406 502.625 512.816406 497.957031 512.070312 497.109375 C 506.980469 491.484375 496.582031 471.535156 487.242188 449.890625 C 476.207031 424.003906 472.496094 418.484375 462.414062 412.648438 C 444.589844 402.355469 440.769531 399.808594 436.207031 395.140625 C 429.839844 388.667969 424.640625 379.96875 422.730469 373.179688 C 420.929688 365.960938 421.882812 365.539062 426.125 371.585938 C 433.871094 382.621094 444.269531 391.109375 452.972656 393.65625 C 455.304688 394.292969 455.09375 393.867188 451.0625 389.730469 C 444.800781 383.257812 444.695312 378.800781 450.957031 384.105469 C 452.652344 385.484375 457.535156 388.457031 461.777344 390.683594 C 470.160156 395.035156 478.753906 402.992188 482.257812 409.570312 C 483.53125 411.90625 488.621094 420.289062 493.609375 428.140625 C 524.484375 476.949219 537.644531 494.347656 547.933594 500.078125 C 574.035156 514.402344 594.410156 521.089844 621.359375 524.164062 C 629.742188 525.121094 638.972656 526.5 642.050781 527.347656 C 646.929688 528.515625 647.886719 528.515625 650.113281 527.03125 C 657.964844 521.9375 657.433594 506.445312 649.054688 494.242188 L 645.445312 489.042969 L 640.246094 490.953125 C 634.410156 493.078125 626.242188 493.394531 620.828125 491.910156 C 617.859375 490.953125 617.222656 491.167969 615.84375 493.289062 C 611.917969 499.230469 599.289062 502.945312 593.242188 499.867188 C 589.527344 497.957031 587.300781 497.640625 588.253906 499.230469 C 588.574219 499.867188 589.847656 500.292969 591.015625 500.292969 C 592.074219 500.292969 593.03125 500.714844 593.03125 501.351562 C 593.03125 503.15625 590.269531 502.519531 583.480469 499.441406 C 576.796875 496.367188 576.691406 496.257812 578.070312 494.136719 C 578.8125 492.863281 579.554688 492.96875 582.207031 494.347656 C 586.027344 496.367188 589.316406 496.578125 586.027344 494.667969 C 584.753906 493.925781 584.011719 492.757812 584.222656 492.015625 C 584.542969 491.378906 584.222656 490.742188 583.480469 490.742188 C 582.84375 490.742188 582.632812 491.167969 582.949219 491.804688 C 583.269531 492.441406 583.054688 492.863281 582.527344 492.863281 C 581.890625 492.863281 581.359375 492.226562 581.359375 491.484375 C 581.359375 490.105469 577.964844 486.605469 575.097656 484.90625 C 572.871094 483.632812 574.886719 486.605469 577.964844 489.042969 C 579.234375 490.105469 580.085938 491.273438 579.765625 491.589844 C 578.917969 492.441406 570.746094 484.269531 570.746094 482.570312 C 570.746094 481.828125 570.21875 481.191406 569.582031 481.191406 C 568.308594 481.191406 568.625 482.785156 571.171875 489.148438 L 572.871094 493.394531 L 570.003906 490 C 565.125 484.480469 560.347656 465.488281 563.320312 463.683594 C 563.957031 463.261719 564.382812 464.640625 564.382812 467.082031 C 564.488281 470.371094 567.140625 477.796875 567.566406 475.886719 C 567.671875 475.570312 567.882812 473.023438 568.09375 470.15625 C 568.625 464.535156 572.765625 457.320312 576.160156 456.257812 C 577.328125 455.832031 578.175781 455.195312 578.175781 454.667969 C 578.175781 451.90625 571.492188 456.683594 568.519531 461.5625 L 566.503906 464.746094 L 566.503906 461.457031 C 566.503906 459.652344 567.566406 456.578125 568.945312 454.558594 C 571.703125 450.210938 581.570312 444.90625 585.179688 445.648438 C 586.558594 445.964844 588.890625 446.390625 590.269531 446.707031 C 592.5 447.132812 592.921875 446.707031 593.558594 443.3125 C 595.578125 432.492188 605.339844 420.289062 616.480469 414.664062 C 632.183594 406.601562 648.734375 407.875 659.875 417.953125 C 664.4375 422.09375 668.789062 423.367188 675.15625 422.410156 C 680.460938 421.5625 682.15625 422.941406 681.839844 427.609375 C 681.628906 430.050781 682.265625 431.003906 684.492188 432.171875 C 686.191406 432.914062 687.464844 434.398438 687.464844 435.460938 C 687.464844 436.628906 688.207031 437.691406 689.054688 438.113281 C 689.902344 438.433594 690.644531 439.492188 690.644531 440.449219 C 690.644531 441.402344 692.34375 444.054688 694.359375 446.390625 C 699.242188 451.695312 698.816406 452.96875 689.585938 462.730469 C 685.445312 467.082031 681.839844 472.066406 681.097656 474.296875 C 676.640625 487.878906 691.390625 515.144531 703.167969 515.144531 C 704.332031 515.144531 709.003906 511.964844 713.566406 508.144531 C 718.128906 504.324219 725.238281 499.019531 729.375 496.367188 C 738.5 490.316406 744.441406 485.542969 757.703125 473.445312 C 767.042969 464.957031 769.164062 462.199219 779.457031 445.859375 C 792.1875 425.488281 805.027344 407.875 817.230469 393.867188 C 821.792969 388.667969 826.140625 383.152344 826.992188 381.558594 C 827.734375 379.96875 830.28125 376.996094 832.507812 374.980469 C 837.070312 370.84375 855.003906 359.808594 855.851562 360.550781 C 856.699219 361.507812 854.261719 365.113281 850.335938 368.507812 C 845.664062 372.648438 845.664062 372.964844 850.863281 371.796875 C 861.582031 369.359375 868.371094 365.433594 879.726562 354.925781 C 888.214844 347.183594 889.167969 348.5625 882.910156 359.066406 C 876.328125 370.3125 866.992188 378.058594 850.652344 386.015625 C 842.90625 389.835938 834.949219 394.292969 832.933594 395.992188 C 826.886719 400.976562 819.988281 412.648438 805.453125 441.933594 C 797.8125 457.425781 790.492188 471.535156 789.113281 473.339844 C 781.789062 483.316406 768.101562 499.125 756.113281 511.644531 C 742.851562 525.4375 737.332031 533.394531 737.332031 539.019531 C 737.332031 540.292969 739.347656 543.15625 741.683594 545.386719 C 752.929688 556.207031 754.839844 569.152344 748.050781 588.890625 C 747.519531 590.585938 745.820312 597.058594 744.441406 603.214844 C 743.0625 609.367188 740.304688 617.644531 738.394531 621.78125 C 732.453125 634.726562 712.609375 660.617188 710.488281 658.492188 C 709.640625 657.644531 710.167969 656.476562 712.1875 654.355469 C 713.777344 652.765625 715.050781 650.855469 715.050781 650.113281 C 715.050781 649.367188 715.582031 648.839844 716.113281 648.839844 C 717.492188 648.839844 726.085938 635.46875 728.3125 630.058594 L 729.90625 626.027344 L 727.78125 628.679688 C 726.617188 630.164062 725.660156 631.863281 725.660156 632.605469 C 725.660156 633.769531 722.902344 637.378906 713.671875 648.625 C 708.367188 654.992188 705.394531 657.539062 703.804688 656.902344 C 702.742188 656.476562 699.242188 658.8125 693.828125 663.480469 C 685.128906 670.90625 683.855469 672.605469 689.585938 669.105469 C 692.238281 667.511719 693.40625 667.300781 694.359375 668.253906 C 695.101562 669 695.527344 669.953125 695.207031 670.484375 C 694.890625 670.90625 694.148438 670.695312 693.617188 669.953125 C 692.875 668.890625 692.769531 669 693.191406 670.484375 C 693.722656 672.074219 692.554688 673.773438 688.417969 677.699219 C 682.371094 683.324219 679.71875 683.746094 685.128906 678.230469 C 689.902344 673.347656 689.375 672.710938 683.75 676.53125 C 681.097656 678.335938 678.550781 679.503906 678.019531 679.183594 C 677.488281 678.761719 676.851562 679.078125 676.640625 679.820312 C 676.320312 680.777344 676.003906 680.777344 675.472656 679.925781 C 675.050781 679.183594 676.746094 677.488281 679.503906 675.683594 C 682.15625 674.089844 684.28125 672.289062 684.28125 671.757812 C 684.28125 671.226562 683.21875 671.652344 681.945312 672.605469 C 680.566406 673.5625 677.59375 675.363281 675.261719 676.53125 C 672.925781 677.804688 669.742188 679.714844 668.152344 680.777344 C 666.667969 681.941406 664.863281 682.792969 664.226562 682.792969 C 662.953125 682.792969 661.679688 683.746094 657.859375 687.035156 C 656.90625 687.992188 654.253906 689.792969 652.128906 691.175781 C 649.902344 692.554688 648.308594 693.828125 648.523438 694.039062 C 648.945312 694.464844 656.164062 690.324219 667.726562 682.898438 C 673.351562 679.394531 674.730469 678.972656 674.730469 680.667969 C 674.730469 682.261719 671.972656 684.914062 665.394531 689.582031 C 662.421875 691.8125 659.875 694.25 659.875 695.101562 C 659.875 696.054688 659.453125 696.480469 658.921875 696.160156 C 658.390625 695.84375 657.753906 696.265625 657.328125 697.117188 C 657.011719 697.964844 655.738281 698.707031 654.570312 698.707031 C 653.402344 698.707031 652.554688 699.238281 652.765625 699.875 C 652.871094 700.617188 651.601562 701.464844 649.902344 701.996094 C 648.203125 702.421875 645.871094 703.695312 644.597656 704.863281 C 640.351562 708.574219 631.226562 714.625 629.847656 714.625 C 629 714.625 627.515625 715.578125 626.453125 716.746094 C 625.390625 717.914062 624.011719 718.867188 623.269531 718.867188 C 622.632812 718.867188 619.769531 721.519531 617.007812 724.703125 C 614.25 727.886719 611.597656 730.328125 611.066406 730.007812 C 610.644531 729.691406 607.035156 733.828125 603.109375 739.027344 C 599.183594 744.332031 595.789062 748.578125 595.46875 748.578125 C 593.878906 748.578125 603.214844 734.359375 609.792969 726.824219 C 616.796875 718.761719 633.351562 704.011719 635.472656 704.011719 C 635.894531 704.011719 636.53125 703.269531 636.957031 702.421875 C 637.699219 700.300781 624.753906 709.316406 618.707031 715.046875 C 616.160156 717.488281 613.296875 719.292969 612.339844 719.078125 C 610.960938 718.867188 610.855469 718.972656 612.023438 719.714844 C 612.976562 720.460938 613.082031 720.988281 612.234375 721.414062 C 611.597656 721.839844 611.066406 721.839844 611.066406 721.414062 C 611.066406 720.988281 610.007812 722.050781 608.734375 723.75 C 607.355469 725.445312 605.976562 727.355469 605.445312 727.886719 C 605.019531 728.417969 602.683594 731.601562 600.246094 734.78125 C 596.214844 740.300781 596 740.40625 596.53125 737.117188 C 596.957031 735.3125 596.957031 733.722656 596.53125 733.722656 C 595.46875 733.722656 593.136719 737.328125 593.03125 739.132812 C 593.03125 739.980469 592.074219 741.785156 590.800781 743.058594 C 589.632812 744.4375 588.359375 746.773438 588.148438 748.363281 C 587.832031 749.851562 586.980469 751.546875 586.34375 751.972656 C 585.390625 752.609375 585.390625 752.820312 586.34375 752.820312 C 587.300781 752.820312 586.980469 753.988281 585.601562 756.214844 C 584.433594 758.125 583.480469 760.566406 583.480469 761.523438 C 583.480469 762.582031 583.054688 763.429688 582.527344 763.429688 C 578.917969 763.429688 574.25 793.035156 576.160156 803.222656 C 577.433594 809.800781 576.691406 810.4375 574.992188 804.386719 Z M 621.679688 767.570312 C 621.679688 766.402344 624.332031 763.113281 628.894531 758.339844 C 630.695312 756.324219 632.289062 754.414062 632.289062 753.988281 C 632.289062 753.667969 633.242188 752.714844 634.410156 751.972656 C 635.578125 751.230469 636.53125 750.0625 636.53125 749.320312 C 636.53125 747.410156 620.722656 764.597656 619.980469 767.464844 C 619.554688 768.738281 618.917969 769.796875 618.390625 769.796875 C 617.859375 769.796875 617.433594 770.328125 617.433594 771.070312 C 617.433594 771.707031 618.390625 771.390625 619.554688 770.328125 C 620.722656 769.265625 621.679688 767.992188 621.679688 767.570312 Z M 420.609375 758.125 C 419.867188 756.851562 403.84375 751.761719 400.660156 751.761719 C 396.523438 751.761719 400.238281 753.5625 408.40625 755.472656 C 412.757812 756.535156 417.109375 757.703125 417.957031 758.230469 C 420.078125 759.398438 421.351562 759.398438 420.609375 758.125 Z M 1018.296875 754.414062 C 1021.585938 753.5625 1028.164062 751.972656 1032.941406 750.699219 C 1037.609375 749.53125 1042.703125 748.578125 1044.292969 748.578125 C 1045.886719 748.578125 1047.160156 748.046875 1047.160156 747.515625 C 1047.160156 746.242188 1047.476562 746.242188 1036.546875 747.515625 C 1031.5625 748.152344 1025.40625 749.320312 1022.753906 750.167969 C 1020.101562 751.015625 1017.554688 751.761719 1017.023438 751.652344 C 1016.496094 751.652344 1015.75 751.972656 1015.433594 752.503906 C 1015.113281 753.03125 1013.628906 753.988281 1012.144531 754.625 C 1008.429688 756.324219 1011.082031 756.324219 1018.296875 754.414062 Z M 670.910156 334.660156 C 670.59375 334.132812 671.125 333.707031 671.972656 333.707031 C 672.925781 333.707031 673.667969 333.28125 673.667969 332.644531 C 673.667969 332.007812 672.289062 331.902344 670.273438 332.433594 C 662.210938 334.238281 641.945312 332.75 636.746094 330.097656 C 634.941406 329.144531 632.820312 328.613281 632.078125 328.933594 C 631.332031 329.25 627.515625 327.234375 623.800781 324.476562 C 615.207031 318.214844 613.933594 317.046875 614.78125 315.5625 C 615.207031 315.03125 614.78125 313.652344 613.933594 312.699219 C 611.808594 310.152344 603.851562 294.449219 603.003906 291.050781 C 602.683594 289.355469 601.941406 288.292969 601.519531 288.613281 C 601.09375 288.929688 601.304688 291.371094 602.15625 294.128906 C 603.746094 299.539062 603.320312 301.875 601.519531 296.996094 C 600.988281 295.296875 599.925781 293.070312 599.394531 292.007812 C 598.757812 290.945312 598.546875 289.671875 598.972656 289.035156 C 599.289062 288.507812 598.972656 287.339844 598.335938 286.488281 C 596.957031 284.898438 596.742188 270.894531 598.015625 266.117188 L 598.757812 263.148438 L 599.394531 266.332031 C 600.246094 269.832031 600.457031 269.511719 603.003906 261.023438 C 603.957031 258.160156 604.382812 256.992188 604.171875 258.585938 C 603.214844 263.890625 606.292969 261.980469 607.777344 256.355469 C 608.519531 253.597656 610.75 248.714844 612.765625 245.746094 C 614.78125 242.667969 616.371094 239.589844 616.371094 238.957031 C 616.371094 238.320312 618.707031 235.453125 621.679688 232.695312 C 624.648438 229.9375 626.984375 227.390625 626.984375 227.070312 C 626.984375 226.011719 617.644531 232.800781 616.160156 234.921875 C 615.417969 235.984375 613.71875 237.363281 612.339844 238.105469 C 611.066406 238.742188 610.007812 240.015625 610.007812 240.863281 C 610.007812 241.714844 609.582031 242.457031 608.945312 242.457031 C 604.59375 242.457031 619.875 225.160156 628.042969 220.8125 L 631.757812 218.902344 L 628.574219 221.660156 C 626.878906 223.144531 625.710938 224.3125 626.027344 224.417969 C 626.984375 224.417969 641.203125 217.839844 641.839844 217.097656 C 642.367188 216.460938 642.582031 216.460938 655.101562 216.140625 C 663.164062 215.929688 665.925781 214.339844 659.664062 213.488281 C 656.585938 213.171875 656.691406 213.066406 660.617188 212.960938 C 665.710938 212.746094 669.214844 213.703125 667.410156 214.871094 C 666.667969 215.1875 668.46875 216.035156 671.230469 216.671875 C 675.6875 217.734375 676.109375 217.734375 674.304688 216.355469 C 668.152344 211.898438 680.882812 215.507812 692.027344 221.449219 C 699.453125 225.375 709.746094 234.816406 709.746094 237.789062 C 709.746094 240.441406 711.441406 242.988281 713.140625 242.988281 C 717.171875 242.988281 723.007812 261.980469 723.433594 276.199219 C 723.644531 283.625 723.007812 285.640625 720.886719 283.835938 C 719.824219 282.882812 719.292969 283.199219 718.765625 285.109375 C 716.640625 293.175781 715.582031 296.144531 714.730469 297.101562 C 713.988281 297.84375 713.882812 297.523438 714.308594 296.359375 C 715.582031 292.75 713.457031 294.449219 711.441406 298.691406 C 710.382812 300.921875 708.789062 303.042969 708.046875 303.359375 C 707.199219 303.679688 706.5625 304.632812 706.5625 305.484375 C 706.5625 306.332031 706.242188 307.179688 705.714844 307.394531 C 705.289062 307.605469 702.53125 310.363281 699.664062 313.441406 C 696.800781 316.625 694.890625 318.851562 695.632812 318.425781 C 696.269531 318.109375 697.011719 318.320312 697.226562 319.0625 C 697.542969 319.808594 698.285156 319.914062 699.027344 319.488281 C 699.984375 318.851562 700.089844 318.320312 699.242188 317.898438 C 698.605469 317.472656 699.027344 316.625 700.515625 315.773438 C 702.636719 314.394531 702.742188 314.394531 701.363281 315.988281 C 699.132812 318.851562 701.152344 318.109375 705.605469 314.5 C 707.835938 312.699219 709.746094 311.742188 709.746094 312.273438 C 709.746094 313.757812 697.863281 325.21875 696.269531 325.21875 C 695.527344 325.21875 693.722656 326.386719 692.132812 327.871094 C 690.539062 329.355469 689.054688 330.3125 688.738281 330.097656 C 688.523438 329.78125 686.613281 330.523438 684.492188 331.585938 C 679.503906 334.132812 671.757812 335.933594 670.910156 334.660156 Z M 674.199219 330.097656 C 682.265625 328.296875 686.402344 326.597656 686.402344 325.21875 C 686.402344 323.734375 685.976562 323.839844 679.082031 326.171875 C 675.792969 327.234375 670.699219 328.933594 667.832031 329.78125 C 661.042969 331.796875 665.394531 332.007812 674.199219 330.097656 Z M 674.199219 330.097656 "/><metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTozMzhjZjMxNC1jOGQxLTRhMDMtYTA3Ny0zZTQyMGIyZDVlYjEAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaF6kUtGXElQWQNZHxVya7jQAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDpiZmIwNjAzMi02OTQ1LTRmYTgtOGQxNC1hOTlmMGIyMjAzNmZscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNojVXCgJRuaRPHtC0zNbQgvQAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggmKYomhWa5JnwBLF966Kffi5PvK3b6bxvs8eBIxti36ykZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaMIjQhmIsWami7kDyuAXM8sAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRMAAAAAAAAAAAAAAAAZGhhc2hYIA+rB52Y6PJtFiesEI+vCN9vVifC1PptQLGRCXFPmREpZG5hbWVuanVtYmYgbWFuaWZlc3RqZXhjbHVzaW9uc4GiZXN0YXJ0GbggZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjMzOGNmMzE0LWM4ZDEtNGEwMy1hMDc3LTNlNDIwYjJkNWViMS9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjQ1YzAyZjIwLTZiMTgtNDZhNy1hZTQzLTY4ZmYxZTcyOGZmNXJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCCYpiiaFZrkmfAEsX3rop9+Lk+8rdvpvG+zx4EjG2LfrKJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggeg7q736hIBh3mMSSiSxPpTcsgtuvoAfuIQjoOQgJ4kqiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggN2NOreeC1q+gFgDf9ojibZsvlHmjP7InVfRyKaX5Hpx0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQFe2YbLQ9c5FeUpuMHVwOkLrJX+ci7CL6FNAOT3cllud8brppgn7QYw2opE/a15utDm7/bnQNN2gn+iPitwT518=</c2pa:manifest></metadata></symbol>
+    <symbol id="word" viewBox="1180 222 2431 518"><path fill-rule="nonzero" fill="currentColor" fill-opacity="1" stroke-width="10.92" stroke-linecap="butt" stroke-linejoin="round" stroke="currentColor" stroke-opacity="1" stroke-miterlimit="10" d="M 147.809537 0.000381909 L 147.809537 -251.549097 L 252.330068 -251.549097 L 252.330068 -272.999031 L 7.799164 -272.999031 L 7.799164 -251.549097 L 112.319696 -251.549097 L 112.319696 0.000381909 Z M 147.809537 0.000381909 " transform="matrix(1.416999, 0, 0, 1.416999, 1186.991563, 718.311959)"/>
+<path fill-rule="nonzero" fill="currentColor" fill-opacity="1" stroke-width="10.92" stroke-linecap="butt" stroke-linejoin="round" stroke="currentColor" stroke-opacity="1" stroke-miterlimit="10" d="M 46.800211 -272.999031 L 46.800211 0.000381909 L 223.080572 0.000381909 L 223.080572 -21.449552 L 82.290052 -21.449552 L 82.290052 -134.940407 L 203.190934 -134.940407 L 203.190934 -153.661202 L 82.290052 -153.661202 L 82.290052 -251.549097 L 223.080572 -251.549097 L 223.080572 -272.999031 Z M 46.800211 -272.999031 " transform="matrix(1.416999, 0, 0, 1.416999, 1644.016189, 718.311959)"/>
+<path fill="none" stroke-width="40.17" stroke-linecap="butt" stroke-linejoin="round" stroke="currentColor" stroke-opacity="1" stroke-miterlimit="10" d="M 1507.11632 506.800382 L 1507.11632 362.6963 C 1507.11632 299.584259 1558.275282 248.425297 1621.384566 248.425297 C 1684.493851 248.425297 1735.655569 299.584259 1735.655569 362.6963 L 1735.655569 506.800382 " transform="matrix(1.416999, 0, 0, 1.416999, 0, 0.176962)"/>
+<path fill-rule="nonzero" fill="#E8843C" fill-opacity="1" d="M 2297.5 503.265625 C 2369.582031 594.570312 2359.972656 666.652344 2297.5 690.679688 C 2235.03125 666.652344 2225.417969 594.570312 2297.5 503.265625 Z M 2297.5 503.265625 "/>
+<path fill-rule="nonzero" fill="currentColor" fill-opacity="1" stroke-width="10.92" stroke-linecap="butt" stroke-linejoin="round" stroke="currentColor" stroke-opacity="1" stroke-miterlimit="10" d="M 177.839755 -272.999031 L 156.389821 -272.999031 L 72.15038 -57.719541 C 67.728622 -46.020078 63.505348 -36.661059 59.475043 -29.639728 C 55.444738 -22.621153 49.14015 -19.109108 40.561279 -19.109108 C 37.1788 -19.109108 33.928643 -20.018822 30.810807 -21.841005 C 27.690216 -23.660431 24.828754 -25.220727 22.22918 -26.519136 L 11.701317 0.000381909 C 16.120318 1.560678 20.86461 2.729521 25.934193 3.509669 C 31.003777 4.289817 36.139521 4.68127 41.33867 4.68127 C 49.661167 4.68127 57.134599 1.169226 63.764478 -5.84935 C 70.394358 -12.870681 76.31025 -23.009848 81.509399 -36.269607 L 157.558664 -229.319015 L 159.11896 -229.319015 L 257.78976 0.000381909 L 296.400193 0.000381909 Z M 177.839755 -272.999031 " transform="matrix(1.416999, 0, 0, 1.416999, 2618.30206, 718.311959)"/>
+<path fill-rule="nonzero" fill="currentColor" fill-opacity="1" stroke-width="10.92" stroke-linecap="butt" stroke-linejoin="round" stroke="currentColor" stroke-opacity="1" stroke-miterlimit="10" d="M 19.498653 -136.500703 C 19.498653 -121.939779 22.293954 -106.405737 27.884555 -89.895821 C 33.475156 -73.385905 42.249753 -58.110994 54.211103 -44.071087 C 66.169696 -30.03118 81.381204 -18.395121 99.840111 -9.165668 C 118.299019 0.0637862 140.399536 4.68127 166.138905 4.68127 C 183.561291 4.68127 199.354463 2.533795 213.523935 -1.75564 C 227.696164 -6.045076 240.434905 -11.828646 251.745673 -19.109108 C 263.053683 -26.389571 272.870316 -34.775472 281.190056 -44.264056 C 289.509797 -53.755397 296.335402 -63.764999 301.664116 -74.295618 C 306.995587 -84.826238 311.025892 -95.420261 313.755031 -106.080446 C 316.484171 -116.74063 317.848741 -126.879797 317.848741 -136.500703 C 317.848741 -151.058871 314.860471 -166.595669 308.881174 -183.105585 C 302.899121 -199.615501 293.669667 -214.890413 281.190056 -228.930319 C 268.710445 -242.970226 252.914516 -254.606285 233.805026 -263.835739 C 214.695536 -273.065192 192.140162 -277.679919 166.138905 -277.679919 C 140.399536 -277.679919 118.299019 -273.131353 99.840111 -264.028708 C 81.381204 -254.92882 66.169696 -243.425083 54.211103 -229.514741 C 42.249753 -215.6044 33.475156 -200.329488 27.884555 -183.690007 C 22.293954 -167.050526 19.498653 -151.320758 19.498653 -136.500703 Z M 57.720391 -136.500703 C 57.720391 -154.70048 60.515691 -171.406122 66.106292 -186.614873 C 71.694136 -201.823623 79.366051 -214.890413 89.113766 -225.809728 C 98.864237 -236.729042 110.37073 -245.244509 123.630489 -251.356128 C 136.890248 -257.46499 151.318851 -260.519421 166.919053 -260.519421 C 182.260126 -260.519421 196.754889 -257.46499 210.4061 -251.356128 C 224.054555 -245.244509 236.015905 -236.729042 246.284637 -225.809728 C 256.556126 -214.890413 264.68014 -201.823623 270.659437 -186.614873 C 276.638734 -171.406122 279.62976 -154.70048 279.62976 -136.500703 C 279.62976 -118.300926 276.638734 -101.595284 270.659437 -86.383777 C 264.68014 -71.175026 256.556126 -58.110994 246.284637 -47.188922 C 236.015905 -36.269607 224.054555 -27.75414 210.4061 -21.645278 C 196.754889 -15.53366 182.260126 -12.479229 166.919053 -12.479229 C 151.318851 -12.479229 136.890248 -15.53366 123.630489 -21.645278 C 110.37073 -27.75414 98.864237 -36.269607 89.113766 -47.188922 C 79.366051 -58.110994 71.694136 -71.175026 66.106292 -86.383777 C 60.515691 -101.595284 57.720391 -118.300926 57.720391 -136.500703 Z M 57.720391 -136.500703 " transform="matrix(1.416999, 0, 0, 1.416999, 3143.300119, 718.311959)"/><metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTo4MGRjMTExYy02MmRlLTRmYmItODcxOC1lMTdhODA3MjljYjAAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaFllKQk+q4ovQvdZVoLsajgAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDo5YjQ2MTc1YS1mZWZiLTRkN2MtODA5Zi03MjIxMDI2NTU1ZWVscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNouQOS78Fd6HMCY9KE8WL2BAAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggTdK0k9fKAgEu/QCfLmfdfrYoGky6o36+4l+0Hw3Fvz6kZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaEKMt89BxaF0s3z4LgYHztoAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRMAAAAAAAAAAAAAAAAZGhhc2hYIOrhSy8tEmgLGxb37rzdayoh1dHDHiumkHFhT5tJsG6aZG5hbWVuanVtYmYgbWFuaWZlc3RqZXhjbHVzaW9uc4GiZXN0YXJ0GRWSZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjgwZGMxMTFjLTYyZGUtNGZiYi04NzE4LWUxN2E4MDcyOWNiMC9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjM2YjIzZDEyLWZmMjctNDgxOC04N2MwLTM5MGJhNDZmOWFjZXJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCBN0rST18oCAS79AJ8uZ91+tigaTLqjfr7iX7QfDcW/PqJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFgg0RZa6FRuac1gMU6SBzMSMKytu+k5Wdm5d5Xp4zCKWX6iY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggDU8nxTV5gY/lRIwsu/4y48eqCqj1f3jrm+Lfg/3IGZh0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQLgEPXQXX000qcThx0ikSkcqbMuiNIMc19c2TvBPxraVg/jKitH2BrSxpZJyLqJ8crbauLrbwxo2U2Rht5V2glQ=</c2pa:manifest></metadata></symbol>
+  </defs>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a href="#top" class="brand" aria-label="ТЕПЛО — на главную"><svg class="icon" viewBox="0 0 2431 518" role="img" aria-label="ТЕПЛО"><use href="#word"/></svg></a>
+    <a class="btn btn-primary" href="https://max.ru/u/f9LHodD0cOJNjmF0EhU8BukreitJJdE3h4TjBzQFyxHFB7i5wDtOBsOf9M4" target="_blank" rel="noopener">Записаться</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero on-wine torn" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div class="stack">
+        <div class="folder f3" aria-hidden="true"><span class="ftab">Пенза</span></div>
+        <div class="folder f2" aria-hidden="true"><span class="ftab">место заботы</span></div>
+        <div class="folder f1">
+          <span class="ftab"><svg class="icon tabmark" viewBox="0 0 2431 518" role="img" aria-label="ТЕПЛО"><use href="#word"/></svg></span>
+          <div class="f1-grid">
+            <div class="f1-text">
+              <p class="label">Телесный терапевт · послеродовая доула</p>
+              <h1 id="hero-title">Ирина <em>Никитина</em></h1>
+              <p class="lead">Согреваю души и тела женщин, которым сейчас особенно важно, чтобы о них позаботились: после родов, после трудного опыта или когда просто устали держать всё на себе.</p>
+              <div class="btns">
+                <a class="btn btn-primary" href="https://max.ru/u/f9LHodD0cOJNjmF0EhU8BukreitJJdE3h4TjBzQFyxHFB7i5wDtOBsOf9M4" target="_blank" rel="noopener">Записаться в Max</a>
+                <a class="btn btn-secondary" href="#services">Услуги и цены</a>
+              </div>
+              <ul class="chips"><li>Пенза · ТЦ «Орленок»</li><li>по записи</li><li>выезд на дом</li></ul>
+            </div>
+            <figure class="f1-photo">
+              <img src="img/portrait.jpg" alt="Ирина Никитина" width="900" height="919" fetchpriority="high">
+              <figcaption class="sticker">4 практики заботы</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about torn" aria-labelledby="about-title">
+    <div class="wrap">
+      <p class="label">Обо мне</p>
+      <h2 id="about-title">Ко мне можно прийти <em>не в ресурсе</em></h2>
+      <div class="fold-tabs" role="tablist" aria-label="Обо мне">
+        <button role="tab" id="t1" aria-controls="p1" aria-selected="true">Знакомство</button>
+        <button role="tab" id="t2" aria-controls="p2" aria-selected="false" tabindex="-1">Мой подход</button>
+        <button role="tab" id="t3" aria-controls="p3" aria-selected="false" tabindex="-1">Образование</button>
+      </div>
+      <div class="folder fa">
+        <div class="tabpanel" role="tabpanel" id="p1" aria-labelledby="t1">
+          <div class="fa-grid">
+            <div class="fa-photo"><img src="img/about.jpg" alt="Ирина во время сеанса" width="900" height="966" loading="lazy"></div>
+            <div>
+              <p class="lead">Уставшей, растерянной, с тяжёлой историей — это всё будет уместно. Я умею быть рядом, и вместе мы найдём подходящий формат работы.</p>
+              <p>Как мама двоих детей, я знаю изнутри, что такое послеродовая усталость, и как важно, чтобы кто-то рядом сказал: «Я вижу, как тебе тяжело».</p>
+              <p class="quote">Каждая женщина достойна заботы не только когда совсем плохо, а просто потому, что она есть.</p>
+            </div>
+          </div>
+        </div>
+        <div class="tabpanel" role="tabpanel" id="p2" aria-labelledby="t2" hidden>
+          <div class="fa-text"><p>Я согреваю души и тела женщин, которым сейчас особенно важно, чтобы о них позаботились. Это женщины после родов и те, кто просто устал держать всё на себе и хочет восстановиться. Особо бережно работаю с женщинами после трудного опыта родов и перинатальных потерь.</p>
+          <p>Одно из моих образований — психолого-педагогическое. Это фундамент, который позволяет мне видеть не только тело, но и эмоциональный контекст. Я сохраняю безопасность и границы в психологической поддержке и сопровождении женщин в разные периоды их жизни.</p>
+          <p>Как мама двоих детей, я знаю изнутри, что такое послеродовая усталость и депрессия, и как важно, чтобы кто-то рядом сказал: «Я вижу, как тебе тяжело».</p>
+          <p>Я верю, что каждая женщина достойна заботы не только когда совсем плохо, а просто потому, что она есть.</p></div>
+        </div>
+        <div class="tabpanel" role="tabpanel" id="p3" aria-labelledby="t3" hidden>
+          <ul class="facts">
+            <li>Психолого-педагогическое образование</li>
+            <li>Мама двоих детей</li>
+            <li><span class="todo">Обучения — ждём список от Ирины</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services torn" id="services" aria-labelledby="services-title">
+    <div class="wrap">
+      <div class="head">
+        <p class="label">Услуги и цены</p>
+        <h2 id="services-title">Чем я могу <em>помочь</em></h2>
+      </div>
+
+      <div class="svc-list">
+<details class="svc svc-main">
+  <summary>
+    <span class="svc-ph"><img src="img/pelenanie.jpg" alt="" loading="lazy"></span>
+    <span class="svc-hd"><span class="svc-t">Послеродовое пеленание</span><span class="svc-l">Ритуал восстановления после родов и трудных событий: тепло, правки, пеленание тканью.</span><span class="svc-m">6–7 часов · в бане или у вас дома</span></span>
+    <span class="tagprice"><b>18 000 ₽</b></span>
+    <span class="svc-x" aria-hidden="true"></span>
+  </summary>
+  <div class="svc-body"><p><span class="sticker">главная практика</span></p><p>Красивый и глубокий процесс восстановления после родов и сложных жизненных событий, уходящий корнями в традиционные ритуалы. В основе — тепло, мягкие правки для живота и таза, глубокое расслабление, перетягивание тканью в ключевых зонах.</p><p>В пеленании происходит «закрытие родов»: женщина бережно перепроживает свой опыт, внутренне ставит точку и делает уверенный шаг в новый этап. Вы прошли сложный путь и имеете право на восстановление в своём темпе.</p><p class="sub">Что это даёт</p><ul class="gives"><li>Тело расслабляется, уходит спазм</li><li>Появляется ощущение собранности и устойчивости</li><li>Лучше всего — от 2 недель до 4 месяцев после родов, но можно и спустя годы</li></ul><p class="note">Аренда бани оплачивается отдельно. Возможен выезд на дом.</p><a class="btn btn-primary" href="https://max.ru/u/f9LHodD0cOJNjmF0EhU8BukreitJJdE3h4TjBzQFyxHFB7i5wDtOBsOf9M4" target="_blank" rel="noopener">Записаться</a></div>
+</details>
+<details class="svc">
+  <summary>
+    <span class="svc-ph"><img src="img/pravka.jpg" alt="" loading="lazy"></span>
+    <span class="svc-hd"><span class="svc-t">Правка тела</span><span class="svc-l">Традиционные техники для всего тела, особенно для живота.</span><span class="svc-m">около 2,5 часа</span></span>
+    <span class="tagprice"><b>4 000 ₽</b></span>
+    <span class="svc-x" aria-hidden="true"></span>
+  </summary>
+  <div class="svc-body"><p>Традиционные техники работы со всем телом. Помогают заботиться о здоровье в разные периоды: перед беременностью, после родов и для общего благополучия. Ключевое место — живот, где копится больше всего напряжения и непрожитых эмоций.</p><p class="sub">Что это даёт</p><ul class="gives"><li>Улучшается кровоток, лимфоток и пищеварение</li><li>Тело согревается, уходят мышечные спазмы</li><li>Запускается саморегуляция организма</li></ul><a class="btn btn-primary" href="https://max.ru/u/f9LHodD0cOJNjmF0EhU8BukreitJJdE3h4TjBzQFyxHFB7i5wDtOBsOf9M4" target="_blank" rel="noopener">Записаться</a></div>
+</details>
+<details class="svc">
+  <summary>
+    <span class="svc-ph"><img src="img/about.jpg" alt="" loading="lazy"></span>
+    <span class="svc-hd"><span class="svc-t">Исцеление истории родов</span><span class="svc-l">Бережная работа с опытом беременности, родов и потерь.</span><span class="svc-m">около 1,5 часа</span></span>
+    <span class="tagprice"><b>3 000 ₽</b></span>
+    <span class="svc-x" aria-hidden="true"></span>
+  </summary>
+  <div class="svc-body"><p>Бережная психологическая и телесная работа с переживаниями о беременности, родах или времени после них — когда воспоминания продолжают влиять даже спустя месяцы или годы. Особо бережно — после травмы и перинатальных потерь.</p><p class="sub">Что это даёт</p><ul class="gives"><li>Место, где ваша история будет услышана</li><li>Уходит давящее эмоциональное напряжение</li><li>Возвращается ощущение «со мной всё в порядке, я не виновата»</li></ul><a class="btn btn-primary" href="https://max.ru/u/f9LHodD0cOJNjmF0EhU8BukreitJJdE3h4TjBzQFyxHFB7i5wDtOBsOf9M4" target="_blank" rel="noopener">Записаться</a></div>
+</details>
+<details class="svc">
+  <summary>
+    <span class="svc-ph"><img src="img/mandala.jpg" alt="" loading="lazy"></span>
+    <span class="svc-hd"><span class="svc-t">Ароматач <em class="small">(AromaTouch)</em></span><span class="svc-l">Расслабление руками и терапевтическими эфирными маслами.</span><span class="svc-m">1 час</span></span>
+    <span class="tagprice"><b>2 500 ₽</b></span>
+    <span class="svc-x" aria-hidden="true"></span>
+  </summary>
+  <div class="svc-body"><p>Расслабление через прикосновение рук по энергетическим зонам тела с нанесением терапевтических эфирных масел. Продуманное до мелочей взаимодействие с телом, где у каждого движения и капли есть свой смысл.</p><p class="sub">Что это даёт</p><ul class="gives"><li>Снижаются стресс и тревога</li><li>Успокаивается ум, тело выдыхает</li><li>Приходят тепло и энергия</li></ul><a class="btn btn-primary" href="https://max.ru/u/f9LHodD0cOJNjmF0EhU8BukreitJJdE3h4TjBzQFyxHFB7i5wDtOBsOf9M4" target="_blank" rel="noopener">Записаться</a></div>
+</details>
+</div></div>
+    </div>
+  </section>
+
+  <section class="reviews" aria-labelledby="reviews-title">
+    <div class="wrap">
+      <div class="head">
+        <div><p class="label">Отзывы</p><h2 id="reviews-title">Что говорят <em>женщины</em></h2></div>
+      </div>
+      <div class="rev-grid">
+        <div class="rev-wrap"><img class="deco pin pin" src="img/deco/pin.png" alt="" aria-hidden="true" loading="lazy"><figure class="rev">
+          <blockquote class="clamp"><p>Ирина, благодарю тебя за прекрасные сеансы правок! До этого никогда их не делала и на самом деле зря, так как это одно из лучших моих решений. После каждого сеанса, который завершается расслаблением, наступает такая лёгкость в животе! А главное, что сон становится глубоким и спокойным. А ещё прошло состояние скованности в районе таза и уже ставшего привычным дискомфорта. Спасибо! Спасибо! Спасибо!</p></blockquote>
+          <figcaption class="who"><p class="label">Анна · правка тела</p><button class="quiet" type="button" aria-expanded="false">Читать полностью</button></figcaption>
+        </figure></div>
+        <div class="rev-wrap"><img class="deco pin pin" src="img/deco/pin.png" alt="" aria-hidden="true" loading="lazy"><figure class="rev">
+          <blockquote class="clamp"><p>Давно хотела проработать ситуацию со своими сложными родами, но не решалась довериться случайному специалисту. На протяжении 13 лет меня мучило чувство вины перед ребёнком и самой собой за «неправильные» роды. Мне хотелось избавиться от призраков прошлого, простить себя.</p><p>Во время нашего общения с Ириной я поняла, насколько глубоко у меня укоренились дурные мысли, чувства, проблема самоедства. Было непросто вновь проживать события тех лет, ту боль и отчаяние. Но благодаря Ирине я смогла увидеть всю картину в роли внешнего наблюдателя.</p><p>Я поняла, что взяла на себя слишком большую ответственность в этом процессе. Осознала, что сделала всё, что могла, чтобы родить самой своего малыша. Путь к прощению и принятию себя я ещё прохожу. Но первый и огромный шаг уже сделан.</p><p>Спасибо Ирине за её чуткость, эмпатию, уютную заботу. Во время беседы казалось, что кто-то родной рядом, жалеет, обнимает и верит в тебя.</p></blockquote>
+          <figcaption class="who"><p class="label">Марина · история родов</p><button class="quiet" type="button" aria-expanded="false">Читать полностью</button></figcaption>
+        </figure></div>
+        <div class="rev-wrap"><img class="deco clip clip" src="img/deco/clip.png" alt="" aria-hidden="true" loading="lazy"><figure class="rev">
+          <blockquote class="clamp"><p>Была у меня одна незакрытая история — потеря близкого человека. Несколько лет я постоянно возвращалась к этой истории, и было ощущение, что туда утекает энергия. Постоянные воспоминания не давали нормально жить.</p><p>Прошло несколько лет после пеленания, и я понимаю, что тема-то закрыта. Больше нет тех ярких болезненных воспоминаний, осталась только ровная, спокойная грусть по человеку.</p><p>Благодарю Ирину за пеленание. Это очень интересный обряд, состоящий из разных этапов, которые помогают на всех уровнях отгоревать и отпустить свои боли и страдания. Из трав сложили мандалу, попарились в баньке (до сих пор помню эти шикарные мешочки), а какой глубокой была психологическая часть! До сих пор помню те образы, которые тогда пришли. Ну и в завершение ребозо и само пеленание.</p><p>Прошло, я уже не вспомню, сколько, года 4 или 5. А я до сих пор с благодарностью вспоминаю пеленание! Благодарю, Ирушка, твои руки и сердце исцеляющие.</p></blockquote>
+          <figcaption class="who"><p class="label">Валерия · пеленание</p><button class="quiet" type="button" aria-expanded="false">Читать полностью</button></figcaption>
+        </figure></div>
+        <div class="rev-wrap"><img class="deco clip clip" src="img/deco/clip.png" alt="" aria-hidden="true" loading="lazy"><figure class="rev">
+          <blockquote class="clamp"><p>На консультацию с Ириной я пришла, чтобы обсудить ситуацию, которая у меня сложилась в материнстве, в возрасте ребёнка от 6 месяцев до 1,5–2 лет. У ребёнка были очень частые ночные просыпания (до 10–12 за ночь), и при этом я сильно нервничала, срывалась на ребёнка, на мужа, в целом состояние было ужасное: ничего не получается, и это никогда не закончится.</p><p>Ирина помогла мне понять, что можно и по-другому на это взглянуть: да, такой период был, и этого не отнять, но я его преодолела! Я молодец, не разбилась вдребезги, не сделала ничего непоправимого, я с ним справилась! И когда я это осознала и приняла, я больше не плакала от тех воспоминаний.</p><p>Я пришла, чтобы принять и отпустить прошлое и не бояться будущего (планируется второй ребёнок). У меня появилась уверенность, что я точно справлюсь, не буду поддаваться панике, смогу сразу просить о помощи, если она понадобится. Вокруг витает мнение, что женщина должна сама со всем справиться, нельзя жаловаться, нельзя уставать от ребёнка, поэтому я держала всё в себе до последнего. С Ириной было комфортно и несложно поделиться своими проблемами, она помогла мне сделать выводы, которые сняли с меня тот груз вины.</p></blockquote>
+          <figcaption class="who"><p class="label">Юлия Сухова · консультация</p><button class="quiet" type="button" aria-expanded="false">Читать полностью</button></figcaption>
+        </figure></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="place torn" aria-labelledby="place-title">
+    <div class="wrap">
+      <p class="label">Где проходят встречи</p>
+      <h2 id="place-title">Тихий кабинет в центре <em>и тёплая мансарда</em></h2>
+      <div class="grid">
+        <figure class="tall"><img src="img/attic.jpg" alt="Деревянная мансарда для пеленания" width="900" height="1200" loading="lazy"><figcaption>Мансарда, где проходит пеленание</figcaption></figure>
+        <figure><img src="img/cabinet.jpg" alt="Кабинет в ТЦ «Орленок»" width="900" height="678" loading="lazy"><figcaption>Кабинет в ТЦ «Орленок»</figcaption></figure>
+        <figure><img src="img/mandala.jpg" alt="Мандала из трав перед пеленанием" width="900" height="1200" loading="lazy"><figcaption>Мандала из трав — часть обряда</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact on-wine" id="contact" aria-labelledby="contact-title">
+    <img class="deco seal" src="img/deco/seal.png" alt="" aria-hidden="true" loading="lazy">
+    <div class="wrap">
+      <div>
+        <p class="label">Запись</p>
+        <h2 id="contact-title">Напишите мне, <em>когда будете готовы</em></h2>
+        <p class="lead">Запись по предварительной договорённости. Можно просто написать и задать вопрос — подберём формат вместе.</p>
+        <div class="btns">
+          <a class="btn btn-primary" href="https://max.ru/u/f9LHodD0cOJNjmF0EhU8BukreitJJdE3h4TjBzQFyxHFB7i5wDtOBsOf9M4" target="_blank" rel="noopener">Написать в Max</a>
+          <a class="btn btn-secondary" href="https://t.me/irinikitina" target="_blank" rel="noopener">Telegram</a>
+          <a class="btn btn-secondary" href="https://vk.ru/iren.nikitina" target="_blank" rel="noopener">ВКонтакте</a>
+          <a class="btn btn-secondary" href="https://www.instagram.com/i_nikitina_" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+      <div>
+        <p class="label">Телефон</p>
+        <a class="phone" href="tel:+79273855882">8 927 385 58 82</a>
+        <div class="addr">
+          <p class="label">Адрес</p>
+          <p>г. Пенза, ул. Московская, 17,<br>ТЦ «Орленок», 3 этаж — ищите табличку ТЕПЛО</p>
+          <a class="quiet" style="color:var(--cream)" href="https://yandex.ru/maps/?text=%D0%9F%D0%B5%D0%BD%D0%B7%D0%B0%2C%20%D1%83%D0%BB.%20%D0%9C%D0%BE%D1%81%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F%2C%2017" target="_blank" rel="noopener">Открыть на Яндекс Картах</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span class="brand"><svg class="icon" viewBox="0 0 2431 518" role="img" aria-label="ТЕПЛО"><use href="#word"/></svg></span>
+    <span>Ирина Никитина · телесный терапевт, послеродовая доула · Пенза</span>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.rev .quiet').forEach(function(b){
+  b.addEventListener('click',function(){
+    var r=b.closest('.rev');var o=r.classList.toggle('open');
+    b.setAttribute('aria-expanded',o);b.textContent=o?'Свернуть':'Читать полностью';
+  });
+});
+
+(function(){var tabs=[].slice.call(document.querySelectorAll('.fold-tabs [role=tab]'));
+function sel(t){tabs.forEach(function(x){var on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on;});}
+tabs.forEach(function(t,i){t.addEventListener('click',function(){sel(t)});t.addEventListener('keydown',function(e){var d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(d){var n=tabs[(i+d+tabs.length)%tabs.length];sel(n);n.focus();}});});})();
+</script>
+</body>
+</html>
