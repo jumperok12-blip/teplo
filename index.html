@@ -224,10 +224,11 @@ section,.hero{position:relative}
 .rev::before{top:-9px;transform:scaleY(-1)}
 .rev::after{bottom:-9px}
 .rev-wrap{position:relative}
+.rev-wrap .deco{width:32px;top:-26px;left:45%;z-index:4}
 .rev-wrap .deco.pin{width:34px;top:-26px;left:46%;transform:rotate(4deg);z-index:4}
 .rev-wrap:nth-child(2) .deco.pin{transform:rotate(-8deg);left:30%}
-.rev-wrap:nth-child(3) .deco.clip{width:30px;top:-28px;left:24px;z-index:4;transform:rotate(-6deg)}
-.rev-wrap:nth-child(4) .deco.clip{width:30px;top:-28px;right:28px;left:auto;z-index:4;transform:rotate(7deg)}
+.rev-wrap .deco.clip{width:30px;top:-28px;left:24px;z-index:4;transform:rotate(-6deg)}
+.rev-wrap:nth-child(5) .deco.clip{width:30px;top:-28px;right:28px;left:auto;z-index:4;transform:rotate(7deg)}
 /* размещение декора */
 .hero .deco.herbs{width:240px;left:-40px;bottom:-30px;transform:rotate(-14deg);z-index:4}
 .about .deco.lavender{width:220px;right:-30px;top:40px;transform:rotate(12deg);opacity:.95}
@@ -346,6 +347,10 @@ section.torn{padding-bottom:calc(var(--section-y)*.55)}
 section.torn + section{padding-top:calc(var(--section-y)*.75)}
 .torn::after{height:18px}
 @media (max-width:600px){:root{--section-y:56px}}
+.edu{list-style:none;padding:0;margin:0;display:grid;gap:var(--s-4)}
+.edu li{display:grid;grid-template-columns:64px minmax(0,1fr);gap:var(--s-4);padding-bottom:var(--s-4);border-bottom:1px solid var(--line)}
+.edu li:last-child{border-bottom:0;padding-bottom:0}
+.edu b{font:500 22px/1.2 var(--font-display);color:var(--flame);font-variant-numeric:lining-nums}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
 </head>
@@ -381,7 +386,7 @@ section.torn + section{padding-top:calc(var(--section-y)*.75)}
             <div class="f1-text">
               <p class="label">Телесный терапевт · послеродовая доула</p>
               <h1 id="hero-title">Ирина <em>Никитина</em></h1>
-              <p class="lead">Согреваю души и тела женщин, которым сейчас особенно важно, чтобы о них позаботились: после родов, после трудного опыта или когда просто устали держать всё на себе.</p>
+              <p class="lead">Согреваю души и тела женщин, которым сейчас особенно важно, чтобы о них позаботились: после родов, трудного опыта или в моменты, когда просто устали держать всё на себе.</p>
               <div class="btns">
                 <a class="btn btn-primary" href="https://max.ru/u/f9LHodD0cOJNjmF0EhU8BukreitJJdE3h4TjBzQFyxHFB7i5wDtOBsOf9M4" target="_blank" rel="noopener">Записаться в Max</a>
                 <a class="btn btn-secondary" href="#services">Услуги и цены</a>
@@ -425,10 +430,12 @@ section.torn + section{padding-top:calc(var(--section-y)*.75)}
           <p>Я верю, что каждая женщина достойна заботы не только когда совсем плохо, а просто потому, что она есть.</p></div>
         </div>
         <div class="tabpanel" role="tabpanel" id="p3" aria-labelledby="t3" hidden>
-          <ul class="facts">
-            <li>Психолого-педагогическое образование</li>
-            <li>Мама двоих детей</li>
-            <li><span class="todo">Обучения — ждём список от Ирины</span></li>
+          <ul class="edu">
+            <li><b>2019</b><span>Пензенский государственный университет, магистратура по направлению «Психолого-педагогическое образование»</span></li>
+            <li><b>2021</b><span>Курс по послеродовому пеленанию NatiSisters</span></li>
+            <li><b>2022</b><span>Семинар-практикум Алены Ковалевской «Послеродовое восстановление женщин на основе правки живота „Ромб Макошь“»</span></li>
+            <li><b>2024</b><span>Институт перинатальной поддержки, курс «Послеродовая доула»</span></li>
+            <li><b>2025</b><span>Институт перинатальной поддержки, курс «Исцеление истории родов»</span></li>
           </ul>
         </div>
       </div>
@@ -463,7 +470,7 @@ section.torn + section{padding-top:calc(var(--section-y)*.75)}
 </details>
 <details class="svc">
   <summary>
-    <span class="svc-ph"><img src="img/about.jpg" alt="" loading="lazy"></span>
+    <span class="svc-ph"><img src="img/mandala.jpg" alt="" loading="lazy"></span>
     <span class="svc-hd"><span class="svc-t">Исцеление истории родов</span><span class="svc-l">Бережная работа с опытом беременности, родов и потерь.</span><span class="svc-m">около 1,5 часа</span></span>
     <span class="tagprice"><b>3 000 ₽</b></span>
     <span class="svc-x" aria-hidden="true"></span>
@@ -472,7 +479,7 @@ section.torn + section{padding-top:calc(var(--section-y)*.75)}
 </details>
 <details class="svc">
   <summary>
-    <span class="svc-ph"><img src="img/mandala.jpg" alt="" loading="lazy"></span>
+    <span class="svc-ph"><img src="img/about.jpg" alt="" loading="lazy"></span>
     <span class="svc-hd"><span class="svc-t">Ароматач <em class="small">(AromaTouch)</em></span><span class="svc-l">Расслабление руками и терапевтическими эфирными маслами.</span><span class="svc-m">1 час</span></span>
     <span class="tagprice"><b>2 500 ₽</b></span>
     <span class="svc-x" aria-hidden="true"></span>
@@ -494,6 +501,10 @@ section.torn + section{padding-top:calc(var(--section-y)*.75)}
           <figcaption class="who"><p class="label">Анна · правка тела</p><button class="quiet" type="button" aria-expanded="false">Читать полностью</button></figcaption>
         </figure></div>
         <div class="rev-wrap"><img class="deco pin pin" src="img/deco/pin.png" alt="" aria-hidden="true" loading="lazy"><figure class="rev">
+          <blockquote class="clamp"><p>Какая же это нежная и расслабляющая процедура! Аромат масел, мягкие движения, уютная атмосфера — это так помогло мне расслабиться. А именно за этим я и пришла к Ирине. Теперь ароматач — моя любовь навсегда. Буду стараться выкраивать ресурс для себя и ходить почаще :) Благодарю за это волшебство!</p></blockquote>
+          <figcaption class="who"><p class="label">Жанна · ароматач</p><button class="quiet" type="button" aria-expanded="false">Читать полностью</button></figcaption>
+        </figure></div>
+      <div class="rev-wrap"><img class="deco pin pin" src="img/deco/pin.png" alt="" aria-hidden="true" loading="lazy"><figure class="rev">
           <blockquote class="clamp"><p>Давно хотела проработать ситуацию со своими сложными родами, но не решалась довериться случайному специалисту. На протяжении 13 лет меня мучило чувство вины перед ребёнком и самой собой за «неправильные» роды. Мне хотелось избавиться от призраков прошлого, простить себя.</p><p>Во время нашего общения с Ириной я поняла, насколько глубоко у меня укоренились дурные мысли, чувства, проблема самоедства. Было непросто вновь проживать события тех лет, ту боль и отчаяние. Но благодаря Ирине я смогла увидеть всю картину в роли внешнего наблюдателя.</p><p>Я поняла, что взяла на себя слишком большую ответственность в этом процессе. Осознала, что сделала всё, что могла, чтобы родить самой своего малыша. Путь к прощению и принятию себя я ещё прохожу. Но первый и огромный шаг уже сделан.</p><p>Спасибо Ирине за её чуткость, эмпатию, уютную заботу. Во время беседы казалось, что кто-то родной рядом, жалеет, обнимает и верит в тебя.</p></blockquote>
           <figcaption class="who"><p class="label">Марина · история родов</p><button class="quiet" type="button" aria-expanded="false">Читать полностью</button></figcaption>
         </figure></div>
@@ -503,7 +514,7 @@ section.torn + section{padding-top:calc(var(--section-y)*.75)}
         </figure></div>
         <div class="rev-wrap"><img class="deco clip clip" src="img/deco/clip.png" alt="" aria-hidden="true" loading="lazy"><figure class="rev">
           <blockquote class="clamp"><p>На консультацию с Ириной я пришла, чтобы обсудить ситуацию, которая у меня сложилась в материнстве, в возрасте ребёнка от 6 месяцев до 1,5–2 лет. У ребёнка были очень частые ночные просыпания (до 10–12 за ночь), и при этом я сильно нервничала, срывалась на ребёнка, на мужа, в целом состояние было ужасное: ничего не получается, и это никогда не закончится.</p><p>Ирина помогла мне понять, что можно и по-другому на это взглянуть: да, такой период был, и этого не отнять, но я его преодолела! Я молодец, не разбилась вдребезги, не сделала ничего непоправимого, я с ним справилась! И когда я это осознала и приняла, я больше не плакала от тех воспоминаний.</p><p>Я пришла, чтобы принять и отпустить прошлое и не бояться будущего (планируется второй ребёнок). У меня появилась уверенность, что я точно справлюсь, не буду поддаваться панике, смогу сразу просить о помощи, если она понадобится. Вокруг витает мнение, что женщина должна сама со всем справиться, нельзя жаловаться, нельзя уставать от ребёнка, поэтому я держала всё в себе до последнего. С Ириной было комфортно и несложно поделиться своими проблемами, она помогла мне сделать выводы, которые сняли с меня тот груз вины.</p></blockquote>
-          <figcaption class="who"><p class="label">Юлия Сухова · консультация</p><button class="quiet" type="button" aria-expanded="false">Читать полностью</button></figcaption>
+          <figcaption class="who"><p class="label">Юлия · консультация</p><button class="quiet" type="button" aria-expanded="false">Читать полностью</button></figcaption>
         </figure></div>
       </div>
     </div>
@@ -512,11 +523,11 @@ section.torn + section{padding-top:calc(var(--section-y)*.75)}
   <section class="place torn" aria-labelledby="place-title">
     <div class="wrap">
       <p class="label">Где проходят встречи</p>
-      <h2 id="place-title">Тихий кабинет в центре <em>и тёплая мансарда</em></h2>
+      <h2 id="place-title">Кабинет в центре, <em>баня или ваш дом</em></h2>
       <div class="grid">
-        <figure class="tall"><img src="img/attic.jpg" alt="Деревянная мансарда для пеленания" width="900" height="1200" loading="lazy"><figcaption>Мансарда, где проходит пеленание</figcaption></figure>
+        <figure class="tall"><img src="img/attic.jpg" alt="Пеленание в бане" width="900" height="1200" loading="lazy"><figcaption>Пеленание в бане</figcaption></figure>
         <figure><img src="img/cabinet.jpg" alt="Кабинет в ТЦ «Орленок»" width="900" height="678" loading="lazy"><figcaption>Кабинет в ТЦ «Орленок»</figcaption></figure>
-        <figure><img src="img/mandala.jpg" alt="Мандала из трав перед пеленанием" width="900" height="1200" loading="lazy"><figcaption>Мандала из трав — часть обряда</figcaption></figure>
+        <figure><img src="img/mandala.jpg" alt="Мандала из трав перед пеленанием" width="900" height="1200" loading="lazy"><figcaption>Пеленание у женщины дома: мандала из трав</figcaption></figure>
       </div>
     </div>
   </section>
